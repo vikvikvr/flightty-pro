@@ -1,5 +1,4 @@
 import { Flight } from 'types/interfaces';
-
 export function getAllPathsBetween(
   departureId: number,
   arrivalId: number,
@@ -66,4 +65,21 @@ function getFlightsFrom(
     if (flightsTaken[flight.id]) return false;
     return flight.departureAirportId === departureId;
   });
+}
+
+// from any airport to any other airport
+export function showPathsCount(flights: Flight[]) {
+  let result = '';
+
+  for (let i = 1; i < 18; i++) {
+    for (let j = 1; j < 18; j++) {
+      if (i === j) continue;
+      const paths = getAllPathsBetween(i, j, flights);
+      if (paths.length > 0) {
+        result += `${i} -> ${j}: ${paths.length}\n`;
+      }
+    }
+  }
+
+  console.log(result);
 }
