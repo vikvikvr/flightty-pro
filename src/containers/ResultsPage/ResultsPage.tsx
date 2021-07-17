@@ -1,16 +1,34 @@
-import React, { useEffect } from 'react';
+import { appContext } from 'App';
+import FlightCard from 'components/FlightCard';
+import React, { useContext, useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import { SearchFlightQuery } from 'types/interfaces';
+import { getFlightsFromTo } from 'services/apiService';
+import { populateFlights, sumFlightsCost } from 'services/flightService';
+import { Flight, SearchFlightQuery } from 'types/interfaces';
 import './ResultsPage.scss';
 
 function ResultsPage() {
-  const location = useLocation<SearchFlightQuery>();
+  const { airlines, airports } = useContext(appContext);
+  const { state } = useLocation<SearchFlightQuery>();
+  const [flights, setFlights] = useState<Flight[]>([]);
 
   useEffect(() => {
-    console.log(location.state);
-  }, [location.state]);
+    getFlightsFromTo(state.departureIata, state.arrivalIata).then(setFlights);
+  }, [state]);
 
-  return <div>results</div>;
+  if (!flights.length) {
+    return <div>loading...</div>;
+  }
+
+  return (
+    <div>
+      <h1>search results</h1>
+      <FlightCard
+        flights={populateFlights(flights, airports, airlines)}
+        totalPrice={sumFlightsCost(flights)}
+      />
+    </div>
+  );
 }
 
 export default ResultsPage;
