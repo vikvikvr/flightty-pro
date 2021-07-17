@@ -17,9 +17,11 @@ function ResultsPage(): JSX.Element {
   const { state } = useLocation<SearchFlightQuery>();
   const [flights, setFlights] = useState<Flight[]>([]);
 
-  useEffect(() => {
+  useEffect(makeRequestUsingFormData, [state]);
+
+  function makeRequestUsingFormData() {
     getFlightsFromTo(state.departureIata, state.arrivalIata).then(setFlights);
-  }, [state]);
+  }
 
   if (!flights.length) {
     return (
