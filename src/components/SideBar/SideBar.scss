@@ -59,6 +59,8 @@
 
 @media screen and (min-width: 1024px) {
   .side-bar {
+    align-items: flex-start;
+
     .link-name {
       display: block;
       font-weight: 600;
@@ -84,7 +86,7 @@
     }
 
     .bottom-part {
-      padding: 0 3rem;
+      padding: 0 2rem;
       display: grid;
       gap: 2.5rem;
     }
