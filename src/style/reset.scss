@@ -1,3 +1,14 @@
+// global resets
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
 // mixins
 
 @mixin reset-space {
