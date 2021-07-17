@@ -2,7 +2,7 @@ import React from 'react';
 import './CrazyPlanes.scss';
 import { AirplaneIcon } from 'assets';
 
-function CrazyPlanes() {
+function CrazyPlanes(): JSX.Element {
   return (
     <div className="crazy-planes-container">
       <AirplaneIcon className="plane first" />

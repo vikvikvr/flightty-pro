@@ -25,11 +25,11 @@ const routes: RouteDescription[] = [
   { path: '/results', component: <ResultsPage /> },
 ];
 
-function App() {
+function App(): JSX.Element {
   const [appState, setAppState] = useState<AppContext>(defaultAppContext);
   useEffect(makeInitialFetch, []);
 
-  function makeInitialFetch() {
+  function makeInitialFetch(): void {
     (async function () {
       try {
         const airports = await getAllAirports();

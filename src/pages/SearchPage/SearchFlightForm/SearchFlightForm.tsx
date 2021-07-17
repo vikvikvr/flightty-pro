@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 import { SearchFlightQuery } from 'types';
 import './SearchFlightForm.scss';
 
-function SearchFlightForm() {
+function SearchFlightForm(): JSX.Element {
   const { airports } = useContext(appContext);
   const history = useHistory<SearchFlightQuery>();
   const [formData, setFormData] = useState<SearchFlightQuery>({
@@ -12,12 +12,12 @@ function SearchFlightForm() {
     departureIata: airports[1].codeIata,
   });
 
-  function handleSearchSubmit(e: React.FormEvent<HTMLFormElement>) {
+  function handleSearchSubmit(e: React.FormEvent<HTMLFormElement>): void {
     e.preventDefault();
     history.push('/results', formData);
   }
 
-  function handleFormChange(e: FormChangeEvent) {
+  function handleFormChange(e: FormChangeEvent): void {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,

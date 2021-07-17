@@ -9,7 +9,7 @@ import {
   bottomBanner,
 } from 'assets';
 
-function SideBar() {
+function SideBar(): JSX.Element {
   return (
     <nav className="side-bar">
       <ul className="nav-links">

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './NavBar.scss';
 import { appLogo } from 'assets';
 
-function NavBar() {
+function NavBar(): JSX.Element {
   return (
     <nav className="app-navbar">
       <Link to="/">

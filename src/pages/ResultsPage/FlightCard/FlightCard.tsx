@@ -9,7 +9,7 @@ interface Props {
   totalPrice: number;
 }
 
-function FlightCard({ flights, totalPrice }: Props) {
+function FlightCard({ flights, totalPrice }: Props): JSX.Element {
   let stopsString = 'Diretto';
   if (flights.length > 1) {
     stopsString = `${flights.length - 1} scali`;

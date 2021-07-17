@@ -7,7 +7,7 @@ import { populateFlights, sumFlightsCost, getFlightsFromTo } from 'services';
 import { Flight, SearchFlightQuery } from 'types';
 import './ResultsPage.scss';
 
-function ResultsPage() {
+function ResultsPage(): JSX.Element {
   const { airlines, airports } = useContext(appContext);
   const { state } = useLocation<SearchFlightQuery>();
   const [flights, setFlights] = useState<Flight[]>([]);

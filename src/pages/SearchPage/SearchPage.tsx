@@ -5,7 +5,7 @@ import { bottomBanner } from 'assets';
 import './SearchPage.scss';
 import { LoadingSpinner, CrazyPlanes } from 'components';
 
-function SearchPage() {
+function SearchPage(): JSX.Element {
   const { airports } = useContext(appContext);
 
   return (
