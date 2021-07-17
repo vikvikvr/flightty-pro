@@ -2,7 +2,7 @@ import React, { createContext, useEffect, useState } from 'react';
 import './App.scss';
 import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
 import { SearchPage, ResultsPage } from 'pages';
-import { AppContext } from 'types/interfaces';
+import { AppContext } from 'types';
 import { getAllAirlines, getAllAirports, getAllFlights } from 'services';
 import { NavBar, SideBar } from 'components';
 import { sideBanner } from 'assets/images';

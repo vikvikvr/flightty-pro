@@ -4,7 +4,7 @@ import FlightCard from './FlightCard';
 import React, { useContext, useEffect, useState } from 'react';
 import { Redirect, useLocation } from 'react-router-dom';
 import { populateFlights, sumFlightsCost, getFlightsFromTo } from 'services';
-import { Flight, SearchFlightQuery } from 'types/interfaces';
+import { Flight, SearchFlightQuery } from 'types';
 import './ResultsPage.scss';
 
 function ResultsPage() {

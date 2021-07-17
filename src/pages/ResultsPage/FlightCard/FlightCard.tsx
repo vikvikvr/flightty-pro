@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { PopulatedFlight } from 'types/interfaces';
+import { PopulatedFlight } from 'types';
 import './FlightCard.scss';
 import { AirplaneIcon } from 'assets/icons';
 

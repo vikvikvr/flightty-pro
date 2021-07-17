@@ -1,4 +1,4 @@
-import { Airline, Airport, Flight, PopulatedFlight } from 'types/interfaces';
+import { Airline, Airport, Flight, PopulatedFlight } from 'types';
 
 export function populateFlights(
   flights: Flight[],

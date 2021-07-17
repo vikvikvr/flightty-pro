@@ -1,5 +1,5 @@
 import * as helpers from './helpers';
-import { Flight, Airport, Airline } from 'types/interfaces';
+import { Flight, Airport, Airline } from 'types';
 
 export async function getAllFlights(): Promise<Flight[]> {
   return helpers.getFromCacheOrApi<Flight>('flights');
