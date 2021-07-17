@@ -11,7 +11,7 @@ import {
 
 function SideBar(): JSX.Element {
   return (
-    <nav className="side-bar">
+    <nav id="side-bar">
       <ul className="nav-links">
         <li>
           <AirplaneIcon className="link-icon" />

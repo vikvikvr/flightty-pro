@@ -25,7 +25,7 @@ function SearchFlightForm(): JSX.Element {
   }
 
   return (
-    <div className="search-form-container">
+    <div id="form-container">
       <form className="search-flight-form" onSubmit={handleSearchSubmit}>
         <h2>Dove vuoi andare?</h2>
         <p className="subtitle">Nuove e fantastiche mete ti attendono...</p>

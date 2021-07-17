@@ -1,6 +1,6 @@
 @import '../../style/style';
 
-.app-navbar {
+#app-navbar {
   @include row;
   grid-row: 1;
   grid-column: 1 / 2;
@@ -35,7 +35,7 @@
 }
 
 @include tablet {
-  .app-navbar {
+  #app-navbar {
     grid-row: 1;
     grid-column: 1 / 4;
 

@@ -18,7 +18,7 @@ function ResultsPage(): JSX.Element {
 
   if (!flights.length) {
     return (
-      <div className="search-results-page">
+      <div id="results-page">
         <LoadingSpinner />
       </div>
     );
@@ -31,7 +31,7 @@ function ResultsPage(): JSX.Element {
   }
 
   return (
-    <div className="search-results-page">
+    <div id="results-page">
       <FlightCard
         flights={populatedFlights}
         totalPrice={sumFlightsCost(flights)}

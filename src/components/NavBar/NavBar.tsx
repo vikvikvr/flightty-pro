@@ -5,7 +5,7 @@ import { appLogo } from 'assets';
 
 function NavBar(): JSX.Element {
   return (
-    <nav className="app-navbar">
+    <nav id="app-navbar">
       <Link to="/">
         <img className="app-logo" src={appLogo} alt="app logo" />
       </Link>

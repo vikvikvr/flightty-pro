@@ -9,7 +9,7 @@ function SearchPage(): JSX.Element {
   const { airports } = useContext(appContext);
 
   return (
-    <div className="search-page">
+    <div id="search-page">
       {airports.length ? (
         <>
           <SearchFlightForm />

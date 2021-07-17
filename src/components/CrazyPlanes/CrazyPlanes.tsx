@@ -4,7 +4,7 @@ import { AirplaneIcon } from 'assets';
 
 function CrazyPlanes(): JSX.Element {
   return (
-    <div className="crazy-planes-container">
+    <div id="crazy-planes">
       <AirplaneIcon className="plane first" />
       <AirplaneIcon className="plane second" />
     </div>

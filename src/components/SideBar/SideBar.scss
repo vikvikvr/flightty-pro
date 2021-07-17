@@ -1,6 +1,6 @@
 @import '../../style/style';
 
-.side-bar {
+#side-bar {
   display: none;
 
   .nav-links {
@@ -33,7 +33,7 @@
 }
 
 @include tablet {
-  .side-bar {
+  #side-bar {
     @include column;
     justify-content: space-between;
     color: $foreground;
@@ -59,7 +59,7 @@
 }
 
 @include desktop {
-  .side-bar {
+  #side-bar {
     align-items: flex-start;
 
     .link-name {

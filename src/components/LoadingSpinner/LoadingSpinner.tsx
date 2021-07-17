@@ -4,7 +4,7 @@ import { AirplaneIcon } from 'assets';
 
 function LoadingSpinner(): JSX.Element {
   return (
-    <div className="loading-spinner">
+    <div id="loading-spinner">
       <AirplaneIcon className="airplane-icon" />
     </div>
   );
