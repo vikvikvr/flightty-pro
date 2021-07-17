@@ -7,7 +7,7 @@
 
 /// <reference types="Cypress" />
 
-const { airlines, airports, flights } = require('../../src/data/database.json');
+const { airlines, airports, flights } = require('../fixtures/database.json');
 
 describe('e2e', () => {
   beforeEach(() => {
