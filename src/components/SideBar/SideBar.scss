@@ -8,6 +8,7 @@
     list-style: none;
     padding: 0;
     gap: 2.5rem;
+    margin-top: 1rem;
   }
 
   .link-icon {
@@ -69,9 +70,10 @@
 
     .line {
       display: block;
-      width: 100%;
+      width: calc(100% - 4rem);
       border: none;
       border-bottom: 1px solid $background;
+      margin: 0 2rem;
     }
 
     .nav-links {

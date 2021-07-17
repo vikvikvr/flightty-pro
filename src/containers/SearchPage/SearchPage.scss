@@ -10,6 +10,8 @@
 
   .bottom-banner {
     width: 100%;
+    max-width: 20rem;
+    max-height: 8rem;
 
     @include tablet {
       display: none;

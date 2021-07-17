@@ -30,7 +30,7 @@ function SideBar() {
           <p className="link-name">informazioni</p>
         </li>
       </ul>
-      <hr className="line" />
+      <div className="line"></div>
       <div className="bottom-part">
         <div className="banner">
           <img src={bottomBanner} alt="side banner" />

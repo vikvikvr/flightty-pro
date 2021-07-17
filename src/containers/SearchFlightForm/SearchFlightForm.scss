@@ -2,8 +2,6 @@
 
 .search-form-container {
   @include card;
-  align-self: start;
-  max-width: 500px;
   padding: 2rem 1rem;
 
   .search-flight-form {

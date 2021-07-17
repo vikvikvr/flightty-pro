@@ -9,6 +9,12 @@
   color: $foreground;
   gap: 1rem;
   box-shadow: $shadow;
+  position: sticky;
+  top: 0;
+
+  @include desktop {
+    padding: 0 2rem;
+  }
 
   .app-logo {
     @include square(3rem);

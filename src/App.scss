@@ -20,6 +20,12 @@ a {
   color: $dark;
   display: grid;
   grid-template-rows: 5rem 1fr;
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+  @include desktop {
+    @include hide-scrollbar;
+  }
 
   .right-banner {
     display: none;
@@ -31,7 +37,7 @@ a {
 @include tablet {
   .App {
     grid-template-rows: 5rem 1fr;
-    grid-template-columns: 5rem 1fr 20%;
+    grid-template-columns: 5rem 1fr 30%;
 
     .right-banner {
       display: block;
@@ -49,6 +55,6 @@ a {
 @include desktop {
   .App {
     grid-template-rows: 5rem 1fr;
-    grid-template-columns: 25% 1fr 20%;
+    grid-template-columns: 20% 1fr 20%;
   }
 }
