@@ -1,0 +1,70 @@
+@mixin square($unit) {
+  width: $unit;
+  height: $unit;
+}
+
+@mixin rectangle($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin circle($unit) {
+  @include rounded-full;
+  width: $unit;
+  height: $unit;
+  min-width: $unit;
+  min-height: $unit;
+}
+
+@mixin screen {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+@mixin fill {
+  width: 100%;
+  height: 100%;
+}
+
+@mixin rounded {
+  border-radius: 0.5em;
+}
+
+@mixin roundedBig {
+  border-radius: 1.5em;
+}
+
+@mixin rounded-full {
+  border-radius: 10000px;
+}
+
+@mixin app-button {
+  @include reset-input;
+  @include rectangle(8em, 3em);
+  @include rounded;
+  @include center;
+  font-weight: 600;
+  font-size: 1.5em;
+  box-shadow: $shadow;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  background-color: $accent;
+  color: $light;
+  text-decoration: none;
+
+  &:hover {
+    background-color: $accentHover;
+  }
+
+  &:active {
+    background-color: $accentActive;
+  }
+}
+
+@mixin card {
+  @include rounded;
+  background-color: $foreground;
+  box-shadow: $shadow;
+  padding: 1rem;
+}

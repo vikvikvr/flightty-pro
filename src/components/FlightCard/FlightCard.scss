@@ -1,0 +1,87 @@
+@import '../../style/style';
+
+.flight-card {
+  @include card;
+  display: grid;
+  gap: 1rem;
+
+  .from-to {
+    font-weight: 700;
+  }
+
+  .airline-name {
+    color: $lessImportant;
+  }
+
+  .card-header {
+    display: grid;
+    grid: repeat(2, 1fr) / repeat(3, 1fr);
+    place-items: center;
+
+    button {
+      @include reset-input;
+      grid-column: 3;
+      grid-row: 1;
+    }
+
+    .from-to {
+      grid-column: 1;
+      grid-row: 2;
+    }
+
+    .airline-name.small {
+      grid-column: 2;
+      grid-row: 2;
+    }
+
+    .stops-number {
+      grid-column: 3;
+      grid-row: 2;
+      font-weight: 700;
+      color: $lessImportant;
+    }
+
+    .price-score {
+      display: none;
+      font-weight: 700;
+      color: $lessImportant;
+    }
+  }
+
+  .flights-list {
+    display: grid;
+    gap: 1rem;
+    list-style: none;
+
+    .flight-details {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      place-items: center;
+    }
+
+    .price-small {
+      font-weight: 700;
+      color: $lessImportant;
+    }
+  }
+}
+
+@media screen and(min-width: 700px) {
+  .flight-card {
+    .card-header {
+      .total-price {
+        font-size: 2em;
+      }
+
+      .from-to {
+        grid-column: 2;
+        grid-row: 1;
+        font-size: 1.5em;
+      }
+
+      .price-score {
+        display: block;
+      }
+    }
+  }
+}

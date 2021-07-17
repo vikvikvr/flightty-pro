@@ -1,0 +1,40 @@
+@import '../../style/style';
+
+.app-navbar {
+  @include row;
+  grid-row: 1;
+  grid-column: 1 / 2;
+  padding: 0 1rem;
+  background-color: $dark;
+  color: $foreground;
+  gap: 1rem;
+  box-shadow: $shadow;
+
+  .app-logo {
+    @include square(3rem);
+  }
+
+  .menu-button {
+    @include reset-input;
+    font-size: 2em;
+  }
+
+  .nav-links {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .app-navbar {
+    grid-row: 1;
+    grid-column: 1 / 4;
+
+    .nav-links {
+      @include row;
+      @include reset-space;
+      gap: 1rem;
+      list-style: none;
+      margin-left: auto;
+    }
+  }
+}

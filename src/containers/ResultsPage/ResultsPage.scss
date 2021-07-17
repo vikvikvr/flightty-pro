@@ -1,0 +1,21 @@
+@import '../../style/style.scss';
+
+.search-results-page {
+  display: grid;
+  gap: 1rem;
+  padding: 1rem;
+
+  .page-header {
+    @include row;
+    justify-content: space-between;
+
+    .search-query {
+      font-weight: 700;
+      color: $lessImportant;
+    }
+
+    .search-icon {
+      font-size: 2em;
+    }
+  }
+}

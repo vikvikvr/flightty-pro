@@ -670,5 +670,64 @@
       "arrivalAirportId": 9,
       "price": 1919.61
     }
+  ],
+  "airlines": [
+    {
+      "id": 1,
+      "name": "Lufthansa",
+      "logoFilename": null,
+      "codeIataPrefix": "220"
+    },
+    {
+      "id": 2,
+      "name": "EasyJet",
+      "logoFilename": null
+    },
+    {
+      "id": 3,
+      "name": "All Nippon Airways",
+      "logoFilename": null,
+      "codeIataPrefix": "205"
+    },
+    {
+      "id": 4,
+      "name": "Alitalia",
+      "logoFilename": null,
+      "codeIataPrefix": "055"
+    },
+    {
+      "id": 5,
+      "name": "British Airways",
+      "logoFilename": null,
+      "codeIataPrefix": "125"
+    },
+    {
+      "id": 6,
+      "name": "Air France",
+      "logoFilename": null,
+      "codeIataPrefix": "057"
+    },
+    {
+      "id": 7,
+      "name": "American Airlines",
+      "logoFilename": null,
+      "codeIataPrefix": "001"
+    },
+    {
+      "id": 8,
+      "name": "Ryanair UK",
+      "logoFilename": null
+    },
+    {
+      "id": 9,
+      "name": "Ryanair",
+      "logoFilename": null
+    },
+    {
+      "id": 10,
+      "name": "Etihad",
+      "logoFilename": null,
+      "codeIataPrefix": "607"
+    }
   ]
 }

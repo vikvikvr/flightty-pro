@@ -1,0 +1,60 @@
+@import '../../style/style';
+
+.side-bar {
+  display: none;
+  color: $foreground;
+  background-color: $dark;
+  grid-column: 1;
+  grid-row: 2 / -1;
+  padding: 1rem 0;
+
+  ul {
+    @include column;
+    list-style: none;
+    padding: 0;
+    gap: 2rem;
+    font-size: 2em;
+    height: 100%;
+  }
+
+  .banner {
+    display: none;
+  }
+
+  .last {
+    margin-top: auto;
+    // justify-self: flex-end;
+  }
+
+  .link-name {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .side-bar {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .side-bar {
+    .link-name {
+      display: block;
+    }
+
+    ul {
+      padding-left: 1rem;
+
+      li {
+        @include row;
+        gap: 1rem;
+        align-self: flex-start;
+      }
+    }
+
+    .banner {
+      display: block;
+    }
+  }
+}

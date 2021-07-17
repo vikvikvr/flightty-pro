@@ -1,0 +1,22 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+import './NavBar.scss';
+import appLogo from 'assets/images/app-logo.png';
+
+function NavBar() {
+  return (
+    <nav className="app-navbar">
+      <button className="menu-button">🍔</button>
+      <Link to="/">
+        <img className="app-logo" src={appLogo} alt="app logo" />
+      </Link>
+      <h1>FlighttyPro</h1>
+      <ul className="nav-links">
+        <li>Home</li>
+        <li>Logout</li>
+      </ul>
+    </nav>
+  );
+}
+
+export default NavBar;

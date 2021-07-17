@@ -1,0 +1,49 @@
+@import './style/style';
+
+.App {
+  @include screen;
+  @include fixed;
+  font-size: 16px;
+  background-color: $background;
+  display: grid;
+  grid-template-rows: 5rem 1fr 25%;
+
+  .right-banner {
+    display: none;
+    grid-column: 3;
+    grid-row: 2 / -1;
+  }
+
+  .bottom-banner {
+    grid-row: 3;
+    height: 100%;
+    min-width: 100%;
+    object-position: 0 0;
+    object-fit: cover;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .App {
+    grid-template-rows: 5rem 1fr;
+    grid-template-columns: 5rem 1fr 20%;
+
+    .right-banner {
+      display: block;
+      min-height: 50%;
+      height: 100%;
+      object-position: 0% 100%;
+    }
+
+    .bottom-banner {
+      display: none;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .App {
+    grid-template-rows: 5rem 1fr;
+    grid-template-columns: 20% 1fr 20%;
+  }
+}
