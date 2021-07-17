@@ -18,6 +18,10 @@
     grid: repeat(2, 1fr) / repeat(3, 1fr);
     place-items: center;
 
+    .total-price {
+      color: $primary;
+    }
+
     button {
       @include reset-input;
       grid-column: 3;
@@ -83,7 +87,6 @@
     .card-header {
       .total-price {
         font-size: 2em;
-        color: $primary;
       }
 
       .from-to {
