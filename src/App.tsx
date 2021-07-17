@@ -11,7 +11,6 @@ import {
 } from 'services/apiService';
 import NavBar from 'components/NavBar';
 import SideBar from 'components/SideBar';
-import bottomBanner from 'assets/images/bottom-banner.jpg';
 import sideBanner from 'assets/images/side-banner.jpeg';
 
 interface RouteDescription {
@@ -60,7 +59,6 @@ function App() {
             ))}
             <Redirect to="/" />
           </Switch>
-          <img className="bottom-banner" src={bottomBanner} alt="advertising" />
           <SideBar />
           <img src={sideBanner} className="right-banner" alt="side banner" />
         </BrowserRouter>

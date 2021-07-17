@@ -1,0 +1,68 @@
+@import '../../style/style';
+
+.crazy-planes-container {
+  z-index: -1;
+
+  .plane {
+    display: none;
+
+    @include tablet {
+      display: block;
+      position: absolute;
+      fill: $dark;
+      filter: drop-shadow($shadow);
+
+      &.first {
+        @include square(4rem);
+        top: 5rem;
+        animation: leftToRight 6s linear infinite;
+      }
+
+      &.second {
+        @include square(3rem);
+        bottom: 5rem;
+        animation: rightToLeft 8s linear infinite reverse;
+        animation-delay: -2s;
+      }
+    }
+
+    @include desktop {
+      &.first {
+        animation: leftToRight 11s linear infinite;
+      }
+
+      &.second {
+        animation: rightToLeft 13s linear infinite;
+        animation-delay: -4s;
+      }
+    }
+  }
+}
+
+@keyframes leftToRight {
+  0% {
+    transform: rotate(60deg);
+    left: 0;
+  }
+  50% {
+    margin-top: 4rem;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+@keyframes rightToLeft {
+  0% {
+    left: 100%;
+    transform: rotate(180deg) scaleY(-1);
+  }
+  50% {
+    margin-bottom: 4rem;
+    transform: rotate(140deg) scaleY(-1);
+  }
+  100% {
+    left: 0;
+    transform: rotate(120deg) scaleY(-1);
+  }
+}

@@ -1,7 +1,9 @@
 import { appContext } from 'App';
+import CrazyPlanes from 'components/CrazyPlanes';
 import FlightCard from 'components/FlightCard';
+import LoadingSpinner from 'components/LoadingSpinner';
 import React, { useContext, useEffect, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Redirect, useLocation } from 'react-router-dom';
 import { getFlightsFromTo } from 'services/apiService';
 import { populateFlights, sumFlightsCost } from 'services/flightService';
 import { Flight, SearchFlightQuery } from 'types/interfaces';
@@ -17,24 +19,26 @@ function ResultsPage() {
   }, [state]);
 
   if (!flights.length) {
-    return <div>loading...</div>;
+    return (
+      <div className="search-results-page">
+        <LoadingSpinner />
+      </div>
+    );
+  }
+
+  const populatedFlights = populateFlights(flights, airports, airlines);
+
+  if (!populatedFlights.length) {
+    return <Redirect to="/" />;
   }
 
   return (
-    <div>
-      <div className="search-results-page">
-        <h1>Risultati ricerca</h1>
-        <div className="page-header">
-          <p className="search-query">TRO → VCE (1 scalo, € 3500)</p>
-          <Link className="search-icon" to="/">
-            🔎
-          </Link>
-        </div>
-        <FlightCard
-          flights={populateFlights(flights, airports, airlines)}
-          totalPrice={sumFlightsCost(flights)}
-        />
-      </div>
+    <div className="search-results-page">
+      <FlightCard
+        flights={populatedFlights}
+        totalPrice={sumFlightsCost(flights)}
+      />
+      <CrazyPlanes />
     </div>
   );
 }

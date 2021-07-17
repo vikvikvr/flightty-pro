@@ -1,6 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { PopulatedFlight } from 'types/interfaces';
 import './FlightCard.scss';
+import { AirplaneIcon } from 'assets/icons';
 
 interface Props {
   flights: PopulatedFlight[];
@@ -15,14 +17,18 @@ function FlightCard({ flights, totalPrice }: Props) {
 
   return (
     <div className="flight-card">
+      <h1>Risultati ricerca</h1>
+      <p>Ce l’hai fatta, sei ad un passo dalla partenza!</p>
       <div className="card-header">
         <h3 className="total-price">€ {Math.round(totalPrice)}</h3>
         <p className="from-to">
           {flights[0].departureIata} → {flights[flights.length - 1].arrivalIata}
         </p>
-        <button>✈</button>
+        <button>
+          <AirplaneIcon className="airplane-icon" />
+        </button>
         <p className="price-score">miglior prezzo</p>
-        <p className="airline-name small">linea aerea</p>
+        <p className="airline-name small">{flights[0].airlineName}</p>
         <p className="stops-number">{stopsString}</p>
       </div>
       {flights.length > 1 && (
@@ -34,13 +40,16 @@ function FlightCard({ flights, totalPrice }: Props) {
                 <p className="from-to">
                   {flight.departureIata} → {flight.arrivalIata}
                 </p>
-                <p className="airline-name">EasyJet</p>
+                <p className="airline-name">{flight.airlineName}</p>
                 <p className="price-small">€ {Math.round(flight.price)}</p>
               </li>
             ))}
           </ol>
         </>
       )}
+      <Link className="search-button" to="/">
+        nuova ricerca
+      </Link>
     </div>
   );
 }

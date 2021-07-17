@@ -52,3 +52,23 @@
 @mixin debug($color: red) {
   border: 1px solid $color;
 }
+
+// media queries
+
+@mixin tablet {
+  @media screen and (min-width: 700px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin desktop-big {
+  @media screen and (min-width: 2048px) {
+    @content;
+  }
+}

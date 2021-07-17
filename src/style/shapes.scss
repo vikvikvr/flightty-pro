@@ -40,25 +40,24 @@
 }
 
 @mixin app-button {
-  @include reset-input;
-  @include rectangle(8em, 3em);
-  @include rounded;
   @include center;
-  font-weight: 600;
-  font-size: 1.5em;
-  box-shadow: $shadow;
+  @include reset-input;
+  @include rounded-full;
   cursor: pointer;
-  transition: background-color 0.3s ease-in-out;
-  background-color: $accent;
-  color: $light;
-  text-decoration: none;
+  background-image: linear-gradient(125deg, #7349dd, #6000aa);
+  font-size: 1rem;
+  color: $foreground;
+  font-weight: 700;
+  text-transform: uppercase;
+  box-shadow: $shadow;
+  padding: 0.5rem 1rem;
+  transform: scale(1);
+  transition: all 0.3s ease-in-out;
+  text-align: center;
 
   &:hover {
-    background-color: $accentHover;
-  }
-
-  &:active {
-    background-color: $accentActive;
+    transform: scale(1.03);
+    box-shadow: $shadowHigh;
   }
 }
 
@@ -67,4 +66,13 @@
   background-color: $foreground;
   box-shadow: $shadow;
   padding: 1rem;
+  place-self: center;
+
+  @include tablet {
+    padding: 2rem;
+  }
+
+  @include desktop {
+    padding: 3rem;
+  }
 }

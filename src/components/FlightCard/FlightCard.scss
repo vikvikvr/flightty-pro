@@ -18,10 +18,18 @@
     grid: repeat(2, 1fr) / repeat(3, 1fr);
     place-items: center;
 
+    .total-price {
+      color: $primary;
+    }
+
     button {
       @include reset-input;
       grid-column: 3;
       grid-row: 1;
+
+      .airplane-icon {
+        fill: $primary;
+      }
     }
 
     .from-to {
@@ -52,22 +60,40 @@
     display: grid;
     gap: 1rem;
     list-style: none;
+    background-color: $background;
+    padding: 1rem 0.5rem;
+    max-height: 8rem;
+    overflow-y: scroll;
 
     .flight-details {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      place-items: center;
-    }
 
-    .price-small {
-      font-weight: 700;
-      color: $lessImportant;
+      .price-small {
+        font-weight: 700;
+        color: $lessImportant;
+        justify-self: end;
+      }
+
+      .airline-name {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
     }
+  }
+
+  .search-button {
+    @include app-button;
+    justify-self: center;
+    width: 9rem;
   }
 }
 
-@media screen and(min-width: 700px) {
+@include tablet {
   .flight-card {
+    padding: 2rem;
+
     .card-header {
       .total-price {
         font-size: 2em;

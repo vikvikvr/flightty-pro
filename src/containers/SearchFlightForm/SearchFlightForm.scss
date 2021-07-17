@@ -2,13 +2,33 @@
 
 .search-form-container {
   @include card;
-  max-width: 500px;
+  padding: 2rem 1rem;
 
   .search-flight-form {
     @include column;
     height: 100%;
     align-items: stretch;
     gap: 1rem;
+
+    @include tablet {
+      gap: 2rem;
+    }
+
+    @include desktop {
+      gap: 2.5rem;
+    }
+
+    select {
+      font-size: 1em;
+      font-weight: 700;
+      padding: 0.25em;
+      color: $dark;
+    }
+
+    .middle-section {
+      display: grid;
+      gap: 1rem;
+    }
 
     .bottom-section {
       @include row;
@@ -24,8 +44,9 @@
       max-width: 4rem;
     }
 
-    input[type='submit'] {
-      margin-top: auto;
+    .submit-button {
+      @include app-button;
+      align-self: center;
     }
   }
 }

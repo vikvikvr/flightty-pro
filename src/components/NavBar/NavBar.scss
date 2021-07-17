@@ -9,9 +9,19 @@
   color: $foreground;
   gap: 1rem;
   box-shadow: $shadow;
+  position: sticky;
+  top: 0;
+
+  @include desktop {
+    padding: 0 2rem;
+  }
 
   .app-logo {
     @include square(3rem);
+  }
+
+  .app-name {
+    letter-spacing: 0.15rem;
   }
 
   .menu-button {
@@ -24,7 +34,7 @@
   }
 }
 
-@media screen and (min-width: 700px) {
+@include tablet {
   .app-navbar {
     grid-row: 1;
     grid-column: 1 / 4;
@@ -35,6 +45,16 @@
       gap: 1rem;
       list-style: none;
       margin-left: auto;
+      font-weight: 600;
+      text-transform: uppercase;
+
+      li {
+        padding-bottom: 0.5rem;
+      }
+
+      .selected {
+        border-bottom: 2px solid $foreground;
+      }
     }
   }
 }
