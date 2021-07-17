@@ -23,15 +23,6 @@ function ResultsPage() {
   return (
     <div>
       <div className="search-results-page">
-        <h1>Risultati ricerca</h1>
-        <div className="page-header">
-          <p className="search-query">
-            Partenza: {state.departureIata} arrivo: {state.arrivalIata}
-          </p>
-          <Link className="search-icon" to="/">
-            🔎
-          </Link>
-        </div>
         <FlightCard
           flights={populateFlights(flights, airports, airlines)}
           totalPrice={sumFlightsCost(flights)}

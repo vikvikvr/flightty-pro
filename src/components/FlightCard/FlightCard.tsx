@@ -1,6 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { PopulatedFlight } from 'types/interfaces';
 import './FlightCard.scss';
+import { AirplaneIcon } from 'assets/icons';
 
 interface Props {
   flights: PopulatedFlight[];
@@ -15,12 +17,16 @@ function FlightCard({ flights, totalPrice }: Props) {
 
   return (
     <div className="flight-card">
+      <h1>Risultati ricerca</h1>
+      <p>Ce l’hai fatta, sei ad un passo dalla partenza!</p>
       <div className="card-header">
         <h3 className="total-price">€ {Math.round(totalPrice)}</h3>
         <p className="from-to">
           {flights[0].departureIata} → {flights[flights.length - 1].arrivalIata}
         </p>
-        <button>✈</button>
+        <button>
+          <AirplaneIcon />
+        </button>
         <p className="price-score">miglior prezzo</p>
         <p className="airline-name small">linea aerea</p>
         <p className="stops-number">{stopsString}</p>
@@ -41,6 +47,9 @@ function FlightCard({ flights, totalPrice }: Props) {
           </ol>
         </>
       )}
+      <Link className="search-icon" to="/">
+        🔎
+      </Link>
     </div>
   );
 }
