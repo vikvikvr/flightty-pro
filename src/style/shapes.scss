@@ -40,26 +40,16 @@
 }
 
 @mixin app-button {
-  @include reset-input;
-  @include rectangle(8em, 3em);
-  @include rounded;
   @include center;
-  font-weight: 600;
-  font-size: 1.5em;
+  @include reset-input;
+  @include rounded-full;
+  background-image: linear-gradient(125deg, #7349dd, #6000aa);
+  font-size: 1rem;
+  color: $foreground;
+  font-weight: 700;
+  text-transform: uppercase;
   box-shadow: $shadow;
-  cursor: pointer;
-  transition: background-color 0.3s ease-in-out;
-  background-color: $accent;
-  color: $light;
-  text-decoration: none;
-
-  &:hover {
-    background-color: $accentHover;
-  }
-
-  &:active {
-    background-color: $accentActive;
-  }
+  padding: 0.5rem 1rem;
 }
 
 @mixin card {
