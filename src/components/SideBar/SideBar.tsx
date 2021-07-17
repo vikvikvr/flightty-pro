@@ -7,7 +7,7 @@ import {
   LuggageIcon,
   UserIcon,
 } from 'assets/icons';
-import bottomBanner from 'assets/images/bottom-banner.jpg';
+import { bottomBanner } from 'assets/images';
 
 function SideBar() {
   return (

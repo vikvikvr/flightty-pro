@@ -1,8 +1,7 @@
 import React, { createContext, useEffect, useState } from 'react';
 import './App.scss';
-import SearchPage from 'pages/SearchPage';
 import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
-import ResultsPage from 'pages/ResultsPage';
+import { SearchPage, ResultsPage } from 'pages';
 import { AppContext } from 'types/interfaces';
 import {
   getAllAirlines,
@@ -10,7 +9,7 @@ import {
   getAllFlights,
 } from 'services/apiService';
 import { NavBar, SideBar } from 'components';
-import sideBanner from 'assets/images/side-banner.jpeg';
+import { sideBanner } from 'assets/images';
 
 interface RouteDescription {
   path: string;

@@ -1,7 +1,7 @@
 import { appContext } from 'App';
-import SearchFlightForm from 'pages/SearchPage/SearchFlightForm';
+import SearchFlightForm from './SearchFlightForm';
 import React, { useContext } from 'react';
-import bottomBanner from 'assets/images/bottom-banner.jpg';
+import { bottomBanner } from 'assets/images';
 import './SearchPage.scss';
 import { LoadingSpinner, CrazyPlanes } from 'components';
 
