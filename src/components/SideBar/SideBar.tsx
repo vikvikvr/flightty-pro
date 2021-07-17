@@ -3,19 +3,33 @@ import './SideBar.scss';
 
 function SideBar() {
   return (
-    <div>
-      <div>✈</div>
-      <p>cerca voli</p>
-      <div>🧳</div>
-      <p>bagagli</p>
-      <div>🛌</div>
-      <p>hotel</p>
-      <div>ℹ</div>
-      <p>informazioni</p>
-      <div>banner</div>
-      <div>🤓</div>
-      <p>ciao utente</p>
-    </div>
+    <nav className="side-bar">
+      <ul>
+        <li>
+          <div>✈</div>
+          <p className="link-name">cerca voli</p>
+        </li>
+        <li>
+          <div>🧳</div>
+          <p className="link-name">bagagli</p>
+        </li>
+        <li>
+          <div>🛌</div>
+          <p className="link-name">hotel</p>
+        </li>
+        <li>
+          <div>ℹ</div>
+          <p className="link-name">informazioni</p>
+        </li>
+        <li className="banner">
+          <div>banner</div>
+        </li>
+        <li className="last">
+          <div>🤓</div>
+          <p className="link-name ">ciao utente</p>
+        </li>
+      </ul>
+    </nav>
   );
 }
 
