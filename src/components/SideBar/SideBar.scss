@@ -31,7 +31,7 @@
   }
 }
 
-@media screen and (min-width: 700px) {
+@include tablet {
   .side-bar {
     @include column;
     justify-content: space-between;
@@ -57,7 +57,7 @@
   }
 }
 
-@media screen and (min-width: 1024px) {
+@include desktop {
   .side-bar {
     align-items: flex-start;
 

@@ -28,7 +28,7 @@
   }
 }
 
-@media screen and (min-width: 700px) {
+@include tablet {
   .app-navbar {
     grid-row: 1;
     grid-column: 1 / 4;

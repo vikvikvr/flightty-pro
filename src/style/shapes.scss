@@ -68,11 +68,11 @@
   padding: 1rem;
   place-self: center;
 
-  @media screen and(min-width: 700px) {
+  @include tablet {
     padding: 2rem;
   }
 
-  @media screen and(min-width: 1000px) {
+  @include desktop {
     padding: 4rem;
   }
 }

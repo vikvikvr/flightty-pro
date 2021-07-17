@@ -36,7 +36,7 @@ a {
   }
 }
 
-@media screen and (min-width: 700px) {
+@include tablet {
   .App {
     grid-template-rows: 5rem 1fr;
     grid-template-columns: 5rem 1fr 20%;
@@ -54,7 +54,7 @@ a {
   }
 }
 
-@media screen and (min-width: 1000px) {
+@include desktop {
   .App {
     grid-template-rows: 5rem 1fr;
     grid-template-columns: 25% 1fr 20%;

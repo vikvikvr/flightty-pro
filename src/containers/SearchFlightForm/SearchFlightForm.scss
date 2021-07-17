@@ -12,11 +12,11 @@
     align-items: stretch;
     gap: 1rem;
 
-    @media screen and (min-width: 600px) {
+    @include tablet {
       gap: 2rem;
     }
 
-    @media screen and (min-width: 1000px) {
+    @include desktop {
       gap: 2.5rem;
     }
 
