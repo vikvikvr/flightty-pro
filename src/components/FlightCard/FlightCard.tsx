@@ -25,7 +25,7 @@ function FlightCard({ flights, totalPrice }: Props) {
           {flights[0].departureIata} → {flights[flights.length - 1].arrivalIata}
         </p>
         <button>
-          <AirplaneIcon />
+          <AirplaneIcon className="airplane-icon" />
         </button>
         <p className="price-score">miglior prezzo</p>
         <p className="airline-name small">linea aerea</p>

@@ -22,6 +22,10 @@
       @include reset-input;
       grid-column: 3;
       grid-row: 1;
+
+      .airplane-icon {
+        fill: $primary;
+      }
     }
 
     .from-to {
