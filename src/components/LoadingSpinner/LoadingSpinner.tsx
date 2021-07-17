@@ -1,6 +1,6 @@
 import React from 'react';
 import './LoadingSpinner.scss';
-import { AirplaneIcon } from 'assets/icons';
+import { AirplaneIcon } from 'assets';
 
 function LoadingSpinner() {
   return (

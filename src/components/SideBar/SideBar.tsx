@@ -6,8 +6,8 @@ import {
   InfoIcon,
   LuggageIcon,
   UserIcon,
-} from 'assets/icons';
-import { bottomBanner } from 'assets/images';
+  bottomBanner,
+} from 'assets';
 
 function SideBar() {
   return (

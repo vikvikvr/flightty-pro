@@ -5,7 +5,7 @@ import { SearchPage, ResultsPage } from 'pages';
 import { AppContext } from 'types';
 import { getAllAirlines, getAllAirports, getAllFlights } from 'services';
 import { NavBar, SideBar } from 'components';
-import { sideBanner } from 'assets/images';
+import { sideBanner } from 'assets';
 
 interface RouteDescription {
   path: string;

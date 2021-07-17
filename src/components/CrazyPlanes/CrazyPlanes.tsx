@@ -1,6 +1,6 @@
 import React from 'react';
 import './CrazyPlanes.scss';
-import { AirplaneIcon } from 'assets/icons';
+import { AirplaneIcon } from 'assets';
 
 function CrazyPlanes() {
   return (
