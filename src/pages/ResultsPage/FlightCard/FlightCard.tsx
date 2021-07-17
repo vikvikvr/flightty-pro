@@ -49,7 +49,7 @@ function FlightCard({ flights, totalPrice }: Props): JSX.Element {
         </>
       )}
       <Link className="search-button" to="/">
-        nuova ricerca
+        indietro
       </Link>
     </div>
   );
