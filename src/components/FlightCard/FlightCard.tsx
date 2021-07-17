@@ -1,15 +1,9 @@
 import React from 'react';
+import { PopulatedFlight } from 'types/interfaces';
 import './FlightCard.scss';
 
-export interface CardFlight {
-  arrivalIata: string;
-  departureIata: string;
-  price: number;
-  id: number;
-}
-
 interface Props {
-  flights: CardFlight[];
+  flights: PopulatedFlight[];
   totalPrice: number;
 }
 
@@ -21,7 +15,7 @@ function FlightCard({ flights, totalPrice }: Props) {
 
   return (
     <div>
-      <h1>€ {totalPrice}</h1>
+      <h1>€ {Math.round(totalPrice * 100) / 100}</h1>
       <p>
         {flights[0].departureIata} • {flights[flights.length - 1].arrivalIata}
       </p>
