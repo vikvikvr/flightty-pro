@@ -1,6 +1,12 @@
 import React from 'react';
 import './SideBar.scss';
-import { AirplaneIcon, BedIcon, InfoIcon, LuggageIcon } from 'assets/icons';
+import {
+  AirplaneIcon,
+  BedIcon,
+  InfoIcon,
+  LuggageIcon,
+  UserIcon,
+} from 'assets/icons';
 import bottomBanner from 'assets/images/bottom-banner.jpg';
 
 function SideBar() {
@@ -30,11 +36,7 @@ function SideBar() {
           <img src={bottomBanner} alt="side banner" />
         </div>
         <li className="last">
-          <img
-            className="user-avatar"
-            src="https://i.pravatar.cc/100"
-            alt="user avatar"
-          />
+          <UserIcon className="user-avatar" />
           <p className="link-name ">ciao utente</p>
         </li>
       </div>

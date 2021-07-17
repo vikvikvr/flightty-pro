@@ -41,8 +41,13 @@
     grid-row: 2 / -1;
     padding: 2rem 0;
 
+    svg {
+      fill: $foreground;
+    }
+
     .user-avatar {
       @include circle(2.5rem);
+      fill: $secondary;
       display: block;
     }
 
