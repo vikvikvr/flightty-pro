@@ -1,9 +1,15 @@
-import React, { createContext, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.scss';
 import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
 import { SearchPage, ResultsPage } from 'pages';
 import { AppContext } from 'types';
-import { getAllAirlines, getAllAirports, getAllFlights } from 'services';
+import {
+  getAllAirlines,
+  getAllAirports,
+  getAllFlights,
+  appContext,
+  defaultAppContext,
+} from 'services';
 import { NavBar, SideBar } from 'components';
 import { sideBanner } from 'assets';
 
@@ -11,14 +17,6 @@ interface RouteDescription {
   path: string;
   component: JSX.Element;
 }
-
-const defaultAppContext: AppContext = {
-  flights: [],
-  airports: [],
-  airlines: [],
-};
-
-export const appContext = createContext<AppContext>(defaultAppContext);
 
 const routes: RouteDescription[] = [
   { path: '/', component: <SearchPage /> },
