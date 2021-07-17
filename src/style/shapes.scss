@@ -53,6 +53,7 @@
   padding: 0.5rem 1rem;
   transform: scale(1);
   transition: all 0.3s ease-in-out;
+  text-align: center;
 
   &:hover {
     transform: scale(1.03);
@@ -65,7 +66,13 @@
   background-color: $foreground;
   box-shadow: $shadow;
   padding: 1rem;
-  max-width: 450px;
-  min-width: 300px;
   place-self: center;
+
+  @media screen and(min-width: 700px) {
+    padding: 2rem;
+  }
+
+  @media screen and(min-width: 1000px) {
+    padding: 4rem;
+  }
 }

@@ -1,14 +1,13 @@
 @import '../../style/style';
 
 .search-page {
-  display: flex;
-  justify-content: center;
-  align-items: stretch;
+  display: grid;
+  place-items: center;
   padding: 1rem;
 }
 
-@media screen and(min-width: 700px) {
-}
-
-@media screen and(min-width: 1024px) {
+@media screen and (min-width: 700px) {
+  .search-page {
+    padding: 2rem;
+  }
 }

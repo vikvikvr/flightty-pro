@@ -2,6 +2,7 @@
 
 .search-form-container {
   @include card;
+  align-self: start;
   max-width: 500px;
   padding: 2rem 1rem;
 
@@ -9,8 +10,15 @@
     @include column;
     height: 100%;
     align-items: stretch;
-    justify-content: space-between;
     gap: 1rem;
+
+    @media screen and (min-width: 600px) {
+      gap: 2rem;
+    }
+
+    @media screen and (min-width: 1000px) {
+      gap: 2.5rem;
+    }
 
     select {
       font-size: 1em;
@@ -22,10 +30,6 @@
     .middle-section {
       display: grid;
       gap: 1rem;
-    }
-
-    label {
-      color: $lessImportant;
     }
 
     .bottom-section {
