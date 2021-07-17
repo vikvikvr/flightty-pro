@@ -90,6 +90,9 @@ export function populateFlights(
   airports: Airport[],
   airlines: Airline[]
 ): PopulatedFlight[] {
+  if (!airports.length) {
+    return [];
+  }
   return flights.map((flight) => {
     const airline = airlines.find((a) => a.id === flight.airlineId);
     const departure = airports.find((a) => a.id === flight.departureAirportId);

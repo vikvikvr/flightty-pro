@@ -1,7 +1,7 @@
 import { appContext } from 'App';
 import FlightCard from 'components/FlightCard';
 import React, { useContext, useEffect, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Redirect, useLocation } from 'react-router-dom';
 import { getFlightsFromTo } from 'services/apiService';
 import { populateFlights, sumFlightsCost } from 'services/flightService';
 import { Flight, SearchFlightQuery } from 'types/interfaces';
@@ -20,10 +20,16 @@ function ResultsPage() {
     return <div>loading...</div>;
   }
 
+  const populatedFlights = populateFlights(flights, airports, airlines);
+
+  if (!populatedFlights.length) {
+    return <Redirect to="/" />;
+  }
+
   return (
     <div className="search-results-page">
       <FlightCard
-        flights={populateFlights(flights, airports, airlines)}
+        flights={populatedFlights}
         totalPrice={sumFlightsCost(flights)}
       />
     </div>
