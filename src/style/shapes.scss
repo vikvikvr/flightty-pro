@@ -61,3 +61,10 @@
     background-color: $accentActive;
   }
 }
+
+@mixin card {
+  @include rounded;
+  background-color: $foreground;
+  box-shadow: $shadow;
+  padding: 1rem;
+}
