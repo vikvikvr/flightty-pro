@@ -1,8 +1,8 @@
 import React, { createContext, useEffect, useState } from 'react';
 import './App.scss';
-import SearchPage from 'containers/SearchPage';
+import SearchPage from 'pages/SearchPage';
 import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
-import ResultsPage from 'containers/ResultsPage';
+import ResultsPage from 'pages/ResultsPage';
 import { AppContext } from 'types/interfaces';
 import {
   getAllAirlines,

@@ -1,6 +1,6 @@
 import { appContext } from 'App';
 import LoadingSpinner from 'components/LoadingSpinner';
-import SearchFlightForm from 'containers/SearchFlightForm';
+import SearchFlightForm from 'pages/SearchPage/SearchFlightForm';
 import React, { useContext } from 'react';
 import bottomBanner from 'assets/images/bottom-banner.jpg';
 import './SearchPage.scss';
