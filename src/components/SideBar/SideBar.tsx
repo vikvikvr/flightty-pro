@@ -1,5 +1,5 @@
 import React from 'react';
-import './SideBar.scss';
+
 import {
   AirplaneIcon,
   BedIcon,
@@ -8,6 +8,7 @@ import {
   UserIcon,
   bottomBanner,
 } from 'assets';
+import './SideBar.scss';
 
 function SideBar(): JSX.Element {
   return (

@@ -1,10 +1,11 @@
-import { appContext } from 'App';
-import { CrazyPlanes, LoadingSpinner } from 'components';
-import FlightCard from './FlightCard';
 import React, { useContext, useEffect, useState } from 'react';
 import { Redirect, useLocation } from 'react-router-dom';
+
+import { appContext } from 'App';
+import { CrazyPlanes, LoadingSpinner } from 'components';
 import { populateFlights, sumFlightsCost, getFlightsFromTo } from 'services';
 import { Flight, SearchFlightQuery } from 'types';
+import FlightCard from './FlightCard';
 import './ResultsPage.scss';
 
 function ResultsPage(): JSX.Element {

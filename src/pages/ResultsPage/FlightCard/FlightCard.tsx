@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+
+import { AirplaneIcon } from 'assets';
 import { PopulatedFlight } from 'types';
 import './FlightCard.scss';
-import { AirplaneIcon } from 'assets';
 
 interface Props {
   flights: PopulatedFlight[];
