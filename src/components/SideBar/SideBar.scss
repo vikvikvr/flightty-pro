@@ -30,10 +30,8 @@
   .link-name {
     display: none;
   }
-}
 
-@include tablet {
-  #side-bar {
+  @include tablet {
     @include column;
     justify-content: space-between;
     color: $foreground;
@@ -56,10 +54,8 @@
       list-style: none;
     }
   }
-}
 
-@include desktop {
-  #side-bar {
+  @include desktop {
     align-items: flex-start;
 
     .link-name {

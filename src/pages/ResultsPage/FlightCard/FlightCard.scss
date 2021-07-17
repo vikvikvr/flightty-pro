@@ -88,10 +88,8 @@
     justify-self: center;
     width: 9rem;
   }
-}
 
-@include tablet {
-  .flight-card {
+  @include tablet {
     padding: 2rem;
 
     .card-header {

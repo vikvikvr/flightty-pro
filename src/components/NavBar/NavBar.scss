@@ -12,10 +12,6 @@
   position: sticky;
   top: 0;
 
-  @include desktop {
-    padding: 0 2rem;
-  }
-
   .app-logo {
     @include square(3rem);
   }
@@ -32,10 +28,8 @@
   .nav-links {
     display: none;
   }
-}
 
-@include tablet {
-  #app-navbar {
+  @include tablet {
     grid-row: 1;
     grid-column: 1 / 4;
 
@@ -56,5 +50,9 @@
         border-bottom: 2px solid $foreground;
       }
     }
+  }
+
+  @include desktop {
+    padding: 0 2rem;
   }
 }
