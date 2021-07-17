@@ -2,6 +2,7 @@ import React from 'react';
 import './App.scss';
 import SearchPage from 'containers/SearchPage';
 import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
+import ResultsPage from 'containers/ResultsPage';
 
 interface RouteDescription {
   path: string;
@@ -10,7 +11,7 @@ interface RouteDescription {
 
 const routes: RouteDescription[] = [
   { path: '/', component: <SearchPage /> },
-  { path: '/results', component: <div>whoops</div> },
+  { path: '/results', component: <ResultsPage /> },
 ];
 
 function App() {
