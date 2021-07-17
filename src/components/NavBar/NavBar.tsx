@@ -1,15 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './NavBar.scss';
+import appLogo from 'assets/images/app-logo.png';
 
 function NavBar() {
   return (
     <nav className="app-navbar">
       <button className="menu-button">🍔</button>
-      <img
-        className="app-logo"
-        src="https://cdn.join.com/5e947ff0ac3bd8000100e449/shippy-pro-logo-l.png"
-        alt="app logo"
-      />
+      <Link to="/">
+        <img className="app-logo" src={appLogo} alt="app logo" />
+      </Link>
       <h1>FlighttyPro</h1>
       <ul className="nav-links">
         <li>Home</li>
