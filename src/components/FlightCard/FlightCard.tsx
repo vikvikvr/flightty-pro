@@ -28,7 +28,7 @@ function FlightCard({ flights, totalPrice }: Props) {
           <AirplaneIcon className="airplane-icon" />
         </button>
         <p className="price-score">miglior prezzo</p>
-        <p className="airline-name small">linea aerea</p>
+        <p className="airline-name small">{flights[0].airlineName}</p>
         <p className="stops-number">{stopsString}</p>
       </div>
       {flights.length > 1 && (
@@ -40,7 +40,7 @@ function FlightCard({ flights, totalPrice }: Props) {
                 <p className="from-to">
                   {flight.departureIata} → {flight.arrivalIata}
                 </p>
-                <p className="airline-name">EasyJet</p>
+                <p className="airline-name">{flight.airlineName}</p>
                 <p className="price-small">€ {Math.round(flight.price)}</p>
               </li>
             ))}
