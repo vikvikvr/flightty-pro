@@ -1,5 +1,6 @@
 import { appContext } from 'App';
 import FlightCard from 'components/FlightCard';
+import LoadingSpinner from 'components/LoadingSpinner';
 import React, { useContext, useEffect, useState } from 'react';
 import { Redirect, useLocation } from 'react-router-dom';
 import { getFlightsFromTo } from 'services/apiService';
@@ -17,7 +18,11 @@ function ResultsPage() {
   }, [state]);
 
   if (!flights.length) {
-    return <div>loading...</div>;
+    return (
+      <div className="search-results-page">
+        <LoadingSpinner />
+      </div>
+    );
   }
 
   const populatedFlights = populateFlights(flights, airports, airlines);
