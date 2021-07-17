@@ -47,8 +47,8 @@ function FlightCard({ flights, totalPrice }: Props) {
           </ol>
         </>
       )}
-      <Link className="search-icon" to="/">
-        🔎
+      <Link className="search-button" to="/">
+        nuova ricerca
       </Link>
     </div>
   );

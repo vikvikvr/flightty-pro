@@ -42,8 +42,9 @@
       max-width: 4rem;
     }
 
-    input[type='submit'] {
-      // margin-top: auto;
+    .submit-button {
+      @include app-button;
+      align-self: center;
     }
   }
 }

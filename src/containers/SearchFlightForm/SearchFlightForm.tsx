@@ -56,7 +56,12 @@ function SearchFlightForm() {
             ))}
           </select>
         </div>
-        <input type="submit" name="submit" value="cerca voli" />
+        <input
+          className="submit-button"
+          type="submit"
+          name="submit"
+          value="cerca voli"
+        />
       </form>
     </div>
   );
