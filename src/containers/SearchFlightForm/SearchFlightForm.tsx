@@ -28,8 +28,9 @@ function SearchFlightForm() {
     <div className="search-form-container">
       <form className="search-flight-form" onSubmit={handleSearchSubmit}>
         <h2>Dove vuoi andare?</h2>
+        <p className="subtitle">Nuove e fantastiche mete ti attendono...</p>
         <div className="middle-section">
-          <label htmlFor="departureIata">Partenza:</label>
+          <label htmlFor="departureIata">Partenza</label>
           <select
             id="departureIata"
             name="departureIata"
@@ -42,7 +43,7 @@ function SearchFlightForm() {
               </option>
             ))}
           </select>
-          <label htmlFor="arrivalIata">Arrivo:</label>
+          <label htmlFor="arrivalIata">Arrivo</label>
           <select
             id="arrivalIata"
             name="arrivalIata"
