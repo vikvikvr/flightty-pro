@@ -4,10 +4,15 @@
   display: grid;
   place-items: center;
   padding: 1rem;
-}
-
-@include tablet {
-  .search-page {
+  @include tablet {
     padding: 2rem;
+  }
+
+  .bottom-banner {
+    width: 100%;
+
+    @include tablet {
+      display: none;
+    }
   }
 }
