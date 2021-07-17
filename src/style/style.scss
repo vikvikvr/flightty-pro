@@ -3,38 +3,42 @@
 @import './shapes.scss';
 @import './reset.scss';
 
-// app-specific mixins go below
+// app-specific mixins
 
-@mixin page {
-  @include screen;
-  position: absolute;
-  display: grid;
-  grid-template: 20% 1fr / 1fr 3fr 1fr;
-
-  .page-title {
-    align-self: end;
-    justify-self: center;
-    grid-column: 2/3;
-  }
-
-  .content {
-    @include column;
-    justify-content: center;
-    gap: 2em;
-    grid-column: 2/3;
-  }
-}
-
-@mixin button-input {
+@mixin app-button {
   @include center;
-  @include rounded;
+  @include reset-input;
+  @include rounded-full;
+  cursor: pointer;
+  background-image: linear-gradient(125deg, #7349dd, #6000aa);
+  font-size: 1rem;
+  color: $foreground;
+  font-weight: 700;
+  text-transform: uppercase;
   box-shadow: $shadow;
-  width: 18em;
-  height: 5em;
+  padding: 0.5rem 1rem;
+  transform: scale(1);
+  transition: all 0.3s ease-in-out;
+  text-align: center;
+
+  &:hover {
+    transform: scale(1.03);
+    box-shadow: $shadowHigh;
+  }
 }
 
-@mixin badge($size) {
-  @include circle($size);
-  border: 5px solid $orange400;
+@mixin card {
+  @include rounded;
+  background-color: $foreground;
   box-shadow: $shadow;
+  padding: 1rem;
+  place-self: center;
+
+  @include tablet {
+    padding: 2rem;
+  }
+
+  @include desktop {
+    padding: 3rem;
+  }
 }
