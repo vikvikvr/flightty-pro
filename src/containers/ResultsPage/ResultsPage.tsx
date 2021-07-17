@@ -25,7 +25,9 @@ function ResultsPage() {
       <div className="search-results-page">
         <h1>Risultati ricerca</h1>
         <div className="page-header">
-          <p className="search-query">TRO → VCE (1 scalo, € 3500)</p>
+          <p className="search-query">
+            Partenza: {state.departureIata} arrivo: {state.arrivalIata}
+          </p>
           <Link className="search-icon" to="/">
             🔎
           </Link>

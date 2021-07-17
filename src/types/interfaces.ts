@@ -31,8 +31,6 @@ export interface PopulatedFlight {
 export interface SearchFlightQuery {
   departureIata: string;
   arrivalIata: string;
-  maxFlights: number;
-  maxPrice: number;
 }
 
 export interface AppContext {
