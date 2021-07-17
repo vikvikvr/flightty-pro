@@ -24,7 +24,7 @@
     display: none;
   }
 
-  .line {
+  .horizontal-line {
     display: none;
   }
 
@@ -63,7 +63,7 @@
       }
     }
 
-    .line {
+    .horizontal-line {
       display: block;
       width: calc(100% - 4rem);
       border: none;
