@@ -9,8 +9,7 @@ import {
   getAllAirports,
   getAllFlights,
 } from 'services/apiService';
-import NavBar from 'components/NavBar';
-import SideBar from 'components/SideBar';
+import { NavBar, SideBar } from 'components';
 import sideBanner from 'assets/images/side-banner.jpeg';
 
 interface RouteDescription {

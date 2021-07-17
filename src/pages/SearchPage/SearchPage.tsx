@@ -1,10 +1,9 @@
 import { appContext } from 'App';
-import LoadingSpinner from 'components/LoadingSpinner';
 import SearchFlightForm from 'pages/SearchPage/SearchFlightForm';
 import React, { useContext } from 'react';
 import bottomBanner from 'assets/images/bottom-banner.jpg';
 import './SearchPage.scss';
-import CrazyPlanes from 'components/CrazyPlanes';
+import { LoadingSpinner, CrazyPlanes } from 'components';
 
 function SearchPage() {
   const { airports } = useContext(appContext);

@@ -1,7 +1,6 @@
 import { appContext } from 'App';
-import CrazyPlanes from 'components/CrazyPlanes';
+import { CrazyPlanes, LoadingSpinner } from 'components';
 import FlightCard from './FlightCard';
-import LoadingSpinner from 'components/LoadingSpinner';
 import React, { useContext, useEffect, useState } from 'react';
 import { Redirect, useLocation } from 'react-router-dom';
 import { getFlightsFromTo } from 'services/apiService';
