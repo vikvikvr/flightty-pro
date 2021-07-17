@@ -5,8 +5,8 @@ import { AirplaneIcon } from 'assets';
 function CrazyPlanes(): JSX.Element {
   return (
     <div id="crazy-planes">
-      <AirplaneIcon className="plane first" />
-      <AirplaneIcon className="plane second" />
+      <AirplaneIcon className="plane top" />
+      <AirplaneIcon className="plane bottom" />
     </div>
   );
 }

@@ -20,12 +20,7 @@
     letter-spacing: 0.15rem;
   }
 
-  .menu-button {
-    @include reset-input;
-    font-size: 2em;
-  }
-
-  .nav-links {
+  .links {
     display: none;
   }
 
@@ -33,16 +28,15 @@
     grid-row: 1;
     grid-column: 1 / 4;
 
-    .nav-links {
+    .links {
       @include row;
       @include reset-space;
       gap: 1rem;
-      list-style: none;
       margin-left: auto;
       font-weight: 600;
       text-transform: uppercase;
 
-      li {
+      .link {
         padding-bottom: 0.5rem;
       }
 

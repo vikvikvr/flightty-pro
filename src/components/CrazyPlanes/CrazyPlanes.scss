@@ -12,13 +12,13 @@
       fill: $dark;
       filter: drop-shadow($shadow);
 
-      &.first {
+      &.top {
         @include square(4rem);
         top: 5rem;
         animation: leftToRight 6s linear infinite;
       }
 
-      &.second {
+      &.bottom {
         @include square(3rem);
         bottom: 5rem;
         animation: rightToLeft 8s linear infinite reverse;
@@ -27,11 +27,11 @@
     }
 
     @include desktop {
-      &.first {
+      &.top {
         animation: leftToRight 11s linear infinite;
       }
 
-      &.second {
+      &.bottom {
         animation: rightToLeft 13s linear infinite;
         animation-delay: -4s;
       }

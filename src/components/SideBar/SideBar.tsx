@@ -35,7 +35,7 @@ function SideBar(): JSX.Element {
         <div className="banner">
           <img src={bottomBanner} alt="side banner" />
         </div>
-        <li className="last">
+        <li className="avatar-container">
           <UserIcon className="user-avatar" />
           <p className="link-name ">ciao utente</p>
         </li>
