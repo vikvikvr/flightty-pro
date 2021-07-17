@@ -3,8 +3,11 @@ import { Airline, Airport, Flight } from 'types';
 
 type DataLabel = 'flights' | 'airports' | 'airlines';
 
-// TODO: move to .env
-const cacheDuration = 60_000;
+let cacheDuration = 60_000;
+
+if (process.env.REACT_APP_CACHE_DURATION) {
+  cacheDuration = parseInt(process.env.REACT_APP_CACHE_DURATION);
+}
 
 export async function getAllFlights(): Promise<Flight[]> {
   return getFromCacheOrApi<Flight>('flights');
@@ -50,7 +53,9 @@ export async function tryToGetFromLocalStorage<T>(
     throw Error(`${label} not saved in local cache yet, need to hit API.`);
   }
 
-  if (Date.now() - parseInt(time) > cacheDuration) {
+  const isCacheExpired = Date.now() - parseInt(time) > cacheDuration;
+
+  if (isCacheExpired) {
     throw Error(`Cache expired for ${label}, need to hit API.`);
   }
 

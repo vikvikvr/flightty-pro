@@ -1,5 +1,6 @@
 import { Airline, Airport, Flight, PopulatedFlight } from 'types';
 
+// converts airlines and airports ids to names/codes
 export function populateFlights(
   flights: Flight[],
   airports: Airport[],
