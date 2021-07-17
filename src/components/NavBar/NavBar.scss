@@ -35,6 +35,16 @@
       gap: 1rem;
       list-style: none;
       margin-left: auto;
+      font-weight: 600;
+      text-transform: uppercase;
+
+      li {
+        padding-bottom: 0.5rem;
+      }
+
+      .selected {
+        border-bottom: 2px solid $foreground;
+      }
     }
   }
 }

@@ -12,7 +12,7 @@ function NavBar() {
       </Link>
       <h1>FlighttyPro</h1>
       <ul className="nav-links">
-        <li>Home</li>
+        <li className="selected">Home</li>
         <li>Logout</li>
       </ul>
     </nav>
