@@ -1,24 +1,25 @@
 import React from 'react';
 import './SideBar.scss';
+import { AirplaneIcon, BedIcon, InfoIcon, LuggageIcon } from 'assets/icons';
 
 function SideBar() {
   return (
     <nav className="side-bar">
       <ul>
         <li>
-          <div>✈</div>
+          <AirplaneIcon />
           <p className="link-name">cerca voli</p>
         </li>
         <li>
-          <div>🧳</div>
+          <LuggageIcon />
           <p className="link-name">bagagli</p>
         </li>
         <li>
-          <div>🛌</div>
+          <BedIcon />
           <p className="link-name">hotel</p>
         </li>
         <li>
-          <div>ℹ</div>
+          <InfoIcon />
           <p className="link-name">informazioni</p>
         </li>
         <li className="banner">
