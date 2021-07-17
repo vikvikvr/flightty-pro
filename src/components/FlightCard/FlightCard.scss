@@ -60,16 +60,26 @@
     display: grid;
     gap: 1rem;
     list-style: none;
+    background-color: $background;
+    padding: 1rem 0.5rem;
+    max-height: 8rem;
+    overflow-y: scroll;
 
     .flight-details {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      place-items: center;
-    }
 
-    .price-small {
-      font-weight: 700;
-      color: $lessImportant;
+      .price-small {
+        font-weight: 700;
+        color: $lessImportant;
+        justify-self: end;
+      }
+
+      .airline-name {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
     }
   }
 
