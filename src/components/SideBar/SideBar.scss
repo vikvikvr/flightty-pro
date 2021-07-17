@@ -1,16 +1,12 @@
 @import '../../style/style';
 
 .side-bar {
-  @include debug;
   display: none;
-  padding-top: 5rem;
-  position: fixed;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 5rem;
   color: $foreground;
   background-color: $dark;
+  grid-column: 1;
+  grid-row: 2 / -1;
+  padding: 1rem 0;
 
   ul {
     @include column;
@@ -26,8 +22,8 @@
   }
 
   .last {
-    // margin-top: auto;
-    justify-self: flex-end;
+    margin-top: auto;
+    // justify-self: flex-end;
   }
 
   .link-name {
@@ -43,24 +39,21 @@
 
 @media screen and (min-width: 1024px) {
   .side-bar {
-    width: 30%;
-
     .link-name {
       display: block;
     }
 
     ul {
-      padding-left: 1em;
+      padding-left: 1rem;
 
       li {
         @include row;
-        gap: 1em;
+        gap: 1rem;
         align-self: flex-start;
       }
     }
 
     .banner {
-      @include debug;
       display: block;
     }
   }
