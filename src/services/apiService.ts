@@ -1,10 +1,6 @@
 import axios from 'axios';
 import { Flight, Airport, Airline } from 'types/interfaces';
 
-// TODO: move to .env file
-const apiEndpoint = 'https://recruitment.shippypro.com/flight-engine/api';
-const authToken = 'MN9ruQV0MFEsgOzMo8crw8gB575rsTe2H5U1y2Lj';
-
 type DataLabel = 'flights' | 'airports' | 'airlines';
 
 // started to get HTTP: 429 Too Many Requests
@@ -40,9 +36,10 @@ async function getFromCacheOrApi<T>(label: DataLabel): Promise<T[]> {
 }
 
 async function fetchFromApi<T>(route: string): Promise<T[]> {
-  const { data } = await axios.get<{ data: T[] }>(`${apiEndpoint}/${route}`, {
+  const apiUrl = `${process.env.REACT_APP_API_URL}/${route}`;
+  const { data } = await axios.get<{ data: T[] }>(apiUrl, {
     headers: {
-      Authorization: `Bearer ${authToken}`,
+      Authorization: `Bearer ${process.env.REACT_APP_API_TOKEN}`,
     },
   });
 
