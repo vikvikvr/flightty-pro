@@ -9,6 +9,10 @@ import {
   getAllAirports,
   getAllFlights,
 } from 'services/apiService';
+import NavBar from 'components/NavBar';
+import SideBar from 'components/SideBar';
+import bottomBanner from 'assets/images/bottom-banner.jpg';
+import sideBanner from 'assets/images/side-banner.jpeg';
 
 interface RouteDescription {
   path: string;
@@ -49,12 +53,16 @@ function App() {
     <div className="App">
       <appContext.Provider value={appState}>
         <BrowserRouter>
+          <NavBar />
           <Switch>
             {routes.map(({ path, component }) => (
               <Route key={path} path={path} exact children={component} />
             ))}
             <Redirect to="/" />
           </Switch>
+          <img className="bottom-banner" src={bottomBanner} alt="advertising" />
+          <SideBar />
+          <img src={sideBanner} className="right-banner" alt="side banner" />
         </BrowserRouter>
       </appContext.Provider>
     </div>
