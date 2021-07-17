@@ -57,4 +57,7 @@
   background-color: $foreground;
   box-shadow: $shadow;
   padding: 1rem;
+  max-width: 450px;
+  min-width: 300px;
+  place-self: center;
 }

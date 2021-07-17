@@ -21,13 +21,11 @@ function ResultsPage() {
   }
 
   return (
-    <div>
-      <div className="search-results-page">
-        <FlightCard
-          flights={populateFlights(flights, airports, airlines)}
-          totalPrice={sumFlightsCost(flights)}
-        />
-      </div>
+    <div className="search-results-page">
+      <FlightCard
+        flights={populateFlights(flights, airports, airlines)}
+        totalPrice={sumFlightsCost(flights)}
+      />
     </div>
   );
 }
