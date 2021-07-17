@@ -1,17 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import './App.scss';
 import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
+
 import { SearchPage, ResultsPage } from 'pages';
-import { AppContext } from 'types';
-import {
-  getAllAirlines,
-  getAllAirports,
-  getAllFlights,
-  appContext,
-  defaultAppContext,
-} from 'services';
 import { NavBar, SideBar } from 'components';
 import { sideBanner } from 'assets';
+import { AppContext } from 'types';
+import { getInitialData, appContext, defaultAppContext } from 'services';
+import './App.scss';
 
 interface RouteDescription {
   path: string;
@@ -28,16 +23,9 @@ function App(): JSX.Element {
   useEffect(makeInitialFetch, []);
 
   function makeInitialFetch(): void {
-    (async function () {
-      try {
-        const airports = await getAllAirports();
-        const airlines = await getAllAirlines();
-        const flights = await getAllFlights();
-        setAppState({ airports, airlines, flights });
-      } catch (O_o) {
-        console.log(O_o);
-      }
-    })();
+    getInitialData()
+      .then((state) => setAppState(state))
+      .catch((O_o) => console.log(O_o));
   }
 
   return (

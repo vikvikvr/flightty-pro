@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
-import { appContext } from 'App';
+import { appContext } from 'services';
 import { SearchFlightQuery } from 'types';
 import './SearchFlightForm.scss';
 

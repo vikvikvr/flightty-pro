@@ -1,16 +1,12 @@
-import { Flight, Airport, Airline } from 'types';
+import { Flight, AppContext } from 'types';
 import * as helpers from './helpers';
 
-export async function getAllFlights(): Promise<Flight[]> {
-  return helpers.getFromCacheOrApi<Flight>('flights');
-}
+export async function getInitialData(): Promise<AppContext> {
+  const airports = await helpers.getAllAirports();
+  const airlines = await helpers.getAllAirlines();
+  const flights = await helpers.getAllFlights();
 
-export function getAllAirports(): Promise<Airport[]> {
-  return helpers.getFromCacheOrApi<Airport>('airports');
-}
-
-export function getAllAirlines(): Promise<Airline[]> {
-  return helpers.getFromCacheOrApi<Airline>('airlines');
+  return { airports, airlines, flights };
 }
 
 export function getFlightsFromTo(

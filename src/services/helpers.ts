@@ -1,9 +1,22 @@
 import axios from 'axios';
+import { Airline, Airport, Flight } from 'types';
 
 type DataLabel = 'flights' | 'airports' | 'airlines';
 
 // TODO: move to .env
 const cacheDuration = 60_000;
+
+export async function getAllFlights(): Promise<Flight[]> {
+  return getFromCacheOrApi<Flight>('flights');
+}
+
+export function getAllAirports(): Promise<Airport[]> {
+  return getFromCacheOrApi<Airport>('airports');
+}
+
+export function getAllAirlines(): Promise<Airline[]> {
+  return getFromCacheOrApi<Airline>('airlines');
+}
 
 export async function getFromCacheOrApi<T>(label: DataLabel): Promise<T[]> {
   try {

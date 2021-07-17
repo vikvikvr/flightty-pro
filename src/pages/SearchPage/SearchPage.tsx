@@ -3,7 +3,7 @@ import React, { useContext } from 'react';
 import { LoadingSpinner, CrazyPlanes } from 'components';
 import { bottomBanner } from 'assets';
 import SearchFlightForm from './SearchFlightForm';
-import { appContext } from 'App';
+import { appContext } from 'services';
 import './SearchPage.scss';
 
 function SearchPage(): JSX.Element {
