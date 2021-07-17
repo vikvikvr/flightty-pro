@@ -1,22 +1,15 @@
-import React, { useState } from 'react';
-import { Airport } from 'types/interfaces';
+import { appContext } from 'App';
+import React, { useContext, useState } from 'react';
+import { useHistory } from 'react-router-dom';
+import { SearchFlightQuery } from 'types/interfaces';
 import './SearchFlightForm.scss';
 
-interface Props {
-  airports: Airport[];
-}
-
-interface State {
-  departureId: number;
-  arrivalId: number;
-  maxFlights: number;
-  maxPrice: number;
-}
-
-function SearchFlightForm({ airports }: Props) {
-  const [formData, setFormData] = useState<State>({
-    arrivalId: 1,
-    departureId: 2,
+function SearchFlightForm() {
+  const { airports } = useContext(appContext);
+  const history = useHistory<SearchFlightQuery>();
+  const [formData, setFormData] = useState<SearchFlightQuery>({
+    arrivalIata: airports[0]?.codeIata || '',
+    departureIata: airports[1]?.codeIata || '',
     maxFlights: 3,
     maxPrice: 2000,
   });
@@ -24,12 +17,13 @@ function SearchFlightForm({ airports }: Props) {
   function handleSearchSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     console.log(formData);
+    history.push('/results', formData);
   }
 
   function handleFormChange(e: FormChangeEvent) {
     setFormData({
       ...formData,
-      [e.target.name]: parseFloat(e.target.value),
+      [e.target.name]: e.target.value,
     });
   }
 
@@ -37,28 +31,28 @@ function SearchFlightForm({ airports }: Props) {
     <div className="search-form-container">
       <form className="search-flight-form" onSubmit={handleSearchSubmit}>
         <h1>Dove vuoi andare?</h1>
-        <label htmlFor="departureId">Partenza:</label>
+        <label htmlFor="departureIata">Partenza:</label>
         <select
-          id="departureId"
-          name="departureId"
-          value={formData.departureId}
+          id="departureIata"
+          name="departureIata"
+          value={formData.departureIata}
           onChange={handleFormChange}
         >
           {airports.map((airport) => (
-            <option key={airport.id} value={airport.id}>
+            <option key={airport.id} value={airport.codeIata}>
               {airport.codeIata}
             </option>
           ))}
         </select>
-        <label htmlFor="arrivalId">Arrivo:</label>
+        <label htmlFor="arrivalIata">Arrivo:</label>
         <select
-          id="arrivalId"
-          name="arrivalId"
-          value={formData.arrivalId}
+          id="arrivalIata"
+          name="arrivalIata"
+          value={formData.arrivalIata}
           onChange={handleFormChange}
         >
           {airports.map((airport) => (
-            <option key={airport.id} value={airport.id}>
+            <option key={airport.id} value={airport.codeIata}>
               {airport.codeIata}
             </option>
           ))}
