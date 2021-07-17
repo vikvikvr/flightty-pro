@@ -2,28 +2,28 @@
 
 .side-bar {
   display: none;
-  color: $foreground;
-  background-color: $dark;
-  grid-column: 1;
-  grid-row: 2 / -1;
-  padding: 1rem 0;
 
-  ul {
+  .nav-links {
     @include column;
     list-style: none;
     padding: 0;
-    gap: 2rem;
-    font-size: 2em;
-    height: 100%;
+    gap: 2.5rem;
+  }
+
+  .link-icon {
+    @include square(1.5rem);
   }
 
   .banner {
     display: none;
   }
 
-  .last {
-    margin-top: auto;
-    // justify-self: flex-end;
+  .line {
+    display: none;
+  }
+
+  .user-avatar {
+    display: none;
   }
 
   .link-name {
@@ -33,7 +33,22 @@
 
 @media screen and (min-width: 700px) {
   .side-bar {
-    display: block;
+    @include column;
+    justify-content: space-between;
+    color: $foreground;
+    background-color: $dark;
+    grid-column: 1;
+    grid-row: 2 / -1;
+    padding: 2rem 0;
+
+    .user-avatar {
+      @include circle(2.5rem);
+      display: block;
+    }
+
+    .last {
+      list-style: none;
+    }
   }
 }
 
@@ -41,20 +56,49 @@
   .side-bar {
     .link-name {
       display: block;
+      font-weight: 600;
+      text-transform: capitalize;
     }
 
-    ul {
-      padding-left: 1rem;
+    .line {
+      display: block;
+      width: 100%;
+      border: none;
+      border-bottom: 1px solid $background;
+    }
+
+    .nav-links {
+      padding-left: 2rem;
+      padding-right: 2rem;
 
       li {
         @include row;
-        gap: 1rem;
+        gap: 2rem;
         align-self: flex-start;
       }
     }
 
+    .bottom-part {
+      padding: 0 3rem;
+      display: grid;
+      gap: 2.5rem;
+    }
+
+    .last {
+      @include row;
+      gap: 2rem;
+      align-self: flex-start;
+    }
+
     .banner {
       display: block;
+
+      img {
+        width: 100%;
+        height: 5em;
+        object-fit: cover;
+        object-position: 50% 0;
+      }
     }
   }
 }

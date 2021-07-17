@@ -1,35 +1,43 @@
 import React from 'react';
 import './SideBar.scss';
 import { AirplaneIcon, BedIcon, InfoIcon, LuggageIcon } from 'assets/icons';
+import bottomBanner from 'assets/images/bottom-banner.jpg';
 
 function SideBar() {
   return (
     <nav className="side-bar">
-      <ul>
+      <ul className="nav-links">
         <li>
-          <AirplaneIcon />
+          <AirplaneIcon className="link-icon" />
           <p className="link-name">cerca voli</p>
         </li>
         <li>
-          <LuggageIcon />
+          <LuggageIcon className="link-icon" />
           <p className="link-name">bagagli</p>
         </li>
         <li>
-          <BedIcon />
+          <BedIcon className="link-icon" />
           <p className="link-name">hotel</p>
         </li>
         <li>
-          <InfoIcon />
+          <InfoIcon className="link-icon" />
           <p className="link-name">informazioni</p>
         </li>
-        <li className="banner">
-          <div>banner</div>
-        </li>
+      </ul>
+      <hr className="line" />
+      <div className="bottom-part">
+        <div className="banner">
+          <img src={bottomBanner} alt="side banner" />
+        </div>
         <li className="last">
-          <div>🤓</div>
+          <img
+            className="user-avatar"
+            src="https://i.pravatar.cc/100"
+            alt="user avatar"
+          />
           <p className="link-name ">ciao utente</p>
         </li>
-      </ul>
+      </div>
     </nav>
   );
 }
