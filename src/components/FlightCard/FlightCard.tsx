@@ -14,24 +14,31 @@ function FlightCard({ flights, totalPrice }: Props) {
   }
 
   return (
-    <div>
-      <h1>€ {Math.round(totalPrice * 100) / 100}</h1>
-      <p>
-        {flights[0].departureIata} • {flights[flights.length - 1].arrivalIata}
-      </p>
-      <button>✈</button>
-      <p>{stopsString}</p>
+    <div className="flight-card">
+      <div className="card-header">
+        <h3 className="total-price">€ {Math.round(totalPrice)}</h3>
+        <p className="from-to">
+          {flights[0].departureIata} → {flights[flights.length - 1].arrivalIata}
+        </p>
+        <button>✈</button>
+        <p className="price-score">miglior prezzo</p>
+        <p className="airline-name small">linea aerea</p>
+        <p className="stops-number">{stopsString}</p>
+      </div>
       {flights.length > 1 && (
         <>
           <hr />
-          {flights.map((flight) => (
-            <div key={flight.id}>
-              <p>
-                {flight.departureIata} • {flight.arrivalIata}
-              </p>
-              <p>€ {flight.price}</p>
-            </div>
-          ))}
+          <ol className="flights-list">
+            {flights.map((flight) => (
+              <li key={flight.id} className="flight-details">
+                <p className="from-to">
+                  {flight.departureIata} → {flight.arrivalIata}
+                </p>
+                <p className="airline-name">EasyJet</p>
+                <p className="price-small">€ {Math.round(flight.price)}</p>
+              </li>
+            ))}
+          </ol>
         </>
       )}
     </div>
