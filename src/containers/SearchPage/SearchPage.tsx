@@ -13,8 +13,8 @@ function SearchPage() {
     <div className="search-page">
       {airports.length ? (
         <>
-          <CrazyPlanes />
           <SearchFlightForm />
+          <CrazyPlanes />
           <img className="bottom-banner" src={bottomBanner} alt="advertising" />
         </>
       ) : (

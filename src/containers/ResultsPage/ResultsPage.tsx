@@ -1,4 +1,5 @@
 import { appContext } from 'App';
+import CrazyPlanes from 'components/CrazyPlanes';
 import FlightCard from 'components/FlightCard';
 import LoadingSpinner from 'components/LoadingSpinner';
 import React, { useContext, useEffect, useState } from 'react';
@@ -37,6 +38,7 @@ function ResultsPage() {
         flights={populatedFlights}
         totalPrice={sumFlightsCost(flights)}
       />
+      <CrazyPlanes />
     </div>
   );
 }
