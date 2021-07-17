@@ -3,11 +3,7 @@ import './App.scss';
 import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
 import { SearchPage, ResultsPage } from 'pages';
 import { AppContext } from 'types/interfaces';
-import {
-  getAllAirlines,
-  getAllAirports,
-  getAllFlights,
-} from 'services/apiService';
+import { getAllAirlines, getAllAirports, getAllFlights } from 'services';
 import { NavBar, SideBar } from 'components';
 import { sideBanner } from 'assets/images';
 
