@@ -18,7 +18,8 @@ function FlightCard({ flights, totalPrice }: Props): JSX.Element {
 
   let stopsString = 'Diretto';
   if (flights.length > 1) {
-    stopsString = `${flights.length - 1} scali`;
+    let suffix = flights.length === 2 ? 'o' : 'i';
+    stopsString = `${flights.length - 1} scal${suffix}`;
   }
 
   return (
@@ -35,7 +36,7 @@ function FlightCard({ flights, totalPrice }: Props): JSX.Element {
         <Link to="/" className="take-flight-button">
           <AirplaneIcon className="airplane-icon" />
         </Link>
-        <p className="price-score">miglior prezzo</p>
+        <p className="price-score">Miglior prezzo</p>
         <p className="airline-name small">{flights[0].airlineName}</p>
         <p className="stops-count">{stopsString}</p>
       </div>
