@@ -6,7 +6,7 @@ function useFlightCardAnimations() {
 
   function animateMount() {
     gsap
-      .timeline({ delay: 0.5 })
+      .timeline()
       .from('.flight-card', slideUp)
       .from(['.card-title', '.card-subtitle'], slideRight)
       .from(

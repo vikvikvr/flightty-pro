@@ -6,7 +6,7 @@ function useFormAnimations() {
 
   function animateMount() {
     gsap
-      .timeline({ delay: 0.5 })
+      .timeline()
       .from('#form-container', slideUp)
       .from(['.title', '.subtitle'], { ...slideRight, stagger: 0.15 })
       .from(['.middle-section > *'], { ...slideDown, stagger: 0.07 })
