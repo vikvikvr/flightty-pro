@@ -13,8 +13,9 @@ function NavBar(): JSX.Element {
         <img className="app-logo" src={appLogo} alt="app logo" />
       </Link>
       <h1 className="app-name">FlighttyPro</h1>
-      <ul className="links">
-        <li className="link selected">Home</li>
+      <ul className="links-container">
+        <li className="link">Home</li>
+        <li className="link">FAQ</li>
         <li className="link">Logout</li>
       </ul>
     </nav>

@@ -20,7 +20,7 @@
     letter-spacing: 0.15rem;
   }
 
-  .links {
+  .links-container {
     display: none;
   }
 
@@ -28,20 +28,28 @@
     grid-row: 1;
     grid-column: 1 / 4;
 
-    .links {
-      @include row;
-      @include reset-space;
+    .links-container {
+      display: grid;
+      grid: 1fr / repeat(3, 1fr);
+      place-items: center;
       gap: 1rem;
       margin-left: auto;
-      font-weight: 600;
-      text-transform: uppercase;
 
       .link {
-        padding-bottom: 0.5rem;
-      }
+        text-transform: uppercase;
+        font-weight: 600;
+        width: 100%;
+        text-align: center;
+        padding: 1rem;
+        cursor: pointer;
+        border-bottom: 3px solid transparent;
+        transition: all 0.3s ease-in-out;
 
-      .selected {
-        border-bottom: 2px solid $foreground;
+        &:hover {
+          border-bottom: 3px solid $primary;
+          margin-top: 0.5rem;
+          background-color: $darkHover;
+        }
       }
     }
   }
