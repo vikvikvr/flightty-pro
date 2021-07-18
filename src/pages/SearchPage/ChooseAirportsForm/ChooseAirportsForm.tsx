@@ -10,10 +10,13 @@ import useFormAnimations from './useFormAnimations';
 
 function ChooseAirportsForm(): JSX.Element {
   const { airports } = useContext(appContext);
+  const sortedAirports = airports.sort((a, b) =>
+    a.codeIata > b.codeIata ? 1 : -1
+  );
   const history = useHistory<AirportsQuery>();
   const [formData, setFormData] = useState<AirportsQuery>({
-    arrivalIata: airports[0].codeIata,
-    departureIata: airports[1].codeIata,
+    departureIata: sortedAirports[0].codeIata,
+    arrivalIata: sortedAirports[1].codeIata,
   });
   useFormAnimations();
 
@@ -43,7 +46,7 @@ function ChooseAirportsForm(): JSX.Element {
             value={formData.departureIata}
             onChange={handleFormChange}
           >
-            {airports.map((airport) => (
+            {sortedAirports.map((airport) => (
               <option key={airport.id} value={airport.codeIata}>
                 {airport.codeIata}
               </option>
@@ -56,7 +59,7 @@ function ChooseAirportsForm(): JSX.Element {
             value={formData.arrivalIata}
             onChange={handleFormChange}
           >
-            {airports.map((airport) => (
+            {sortedAirports.map((airport) => (
               <option key={airport.id} value={airport.codeIata}>
                 {airport.codeIata}
               </option>
