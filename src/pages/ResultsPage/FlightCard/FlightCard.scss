@@ -29,6 +29,13 @@
 
       .airplane-icon {
         fill: $primary;
+        cursor: pointer;
+        filter: drop-shadow($shadow);
+        transition: all 0.15s ease-in-out;
+
+        &:hover {
+          transform: rotate(30deg);
+        }
       }
     }
 

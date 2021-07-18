@@ -27,9 +27,9 @@ function FlightCard({ flights, totalPrice }: Props): JSX.Element {
         <p className="from-to">
           {flights[0].departureIata} → {flights[flights.length - 1].arrivalIata}
         </p>
-        <button className="take-flight-button">
+        <Link to="/" className="take-flight-button">
           <AirplaneIcon className="airplane-icon" />
-        </button>
+        </Link>
         <p className="price-score">miglior prezzo</p>
         <p className="airline-name small">{flights[0].airlineName}</p>
         <p className="stops-count">{stopsString}</p>
