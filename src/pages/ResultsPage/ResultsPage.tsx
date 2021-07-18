@@ -22,7 +22,13 @@ function ResultsPage(): JSX.Element {
   useEffect(makeRequestUsingFormData, [state]);
 
   function makeRequestUsingFormData() {
-    getFlightsFromTo(state.departureIata, state.arrivalIata).then(setFlights);
+    if (state) {
+      getFlightsFromTo(state.departureIata, state.arrivalIata).then(setFlights);
+    }
+  }
+
+  if (!state) {
+    return <Redirect to="/" />;
   }
 
   if (!flights.length) {
