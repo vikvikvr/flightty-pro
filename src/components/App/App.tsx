@@ -13,9 +13,12 @@ function App(): JSX.Element {
   useAppAnimations();
 
   function makeInitialFetch(): void {
-    getInitialData()
-      .then((state) => setAppState(state))
-      .catch((O_o) => console.log(O_o));
+    // timeout only used to showcase loading spinner, remove in production!
+    setTimeout(() => {
+      getInitialData()
+        .then((state) => setAppState(state))
+        .catch((O_o) => console.log(O_o));
+    }, 1_500);
   }
 
   return (
