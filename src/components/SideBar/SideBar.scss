@@ -1,25 +1,30 @@
 @import '../../style/style';
 
-.side-bar {
+#side-bar {
   display: none;
 
   .nav-links {
     @include column;
-    list-style: none;
     padding: 0;
     gap: 2.5rem;
     margin-top: 1rem;
-  }
 
-  .link-icon {
-    @include square(1.5rem);
+    .link-icon {
+      @include square(1.5rem);
+      fill: $foreground;
+    }
+
+    .link-name {
+      display: none;
+      color: $foreground;
+    }
   }
 
   .banner {
     display: none;
   }
 
-  .line {
+  .horizontal-line {
     display: none;
   }
 
@@ -27,13 +32,7 @@
     display: none;
   }
 
-  .link-name {
-    display: none;
-  }
-}
-
-@include tablet {
-  .side-bar {
+  @include tablet {
     @include column;
     justify-content: space-between;
     color: $foreground;
@@ -42,33 +41,29 @@
     grid-row: 2 / -1;
     padding: 2rem 0;
 
-    svg {
-      fill: $foreground;
-    }
-
     .user-avatar {
       @include circle(2.5rem);
       fill: $secondary;
       display: block;
     }
 
-    .last {
-      list-style: none;
+    .avatar-container .link-name {
+      display: none;
     }
   }
-}
 
-@include desktop {
-  .side-bar {
-    align-items: flex-start;
+  @include desktop {
+    .nav-links {
+      align-items: flex-start;
 
-    .link-name {
-      display: block;
-      font-weight: 600;
-      text-transform: capitalize;
+      .link-name {
+        display: block;
+        font-weight: 600;
+        text-transform: capitalize;
+      }
     }
 
-    .line {
+    .horizontal-line {
       display: block;
       width: calc(100% - 4rem);
       border: none;
@@ -93,10 +88,14 @@
       gap: 2.5rem;
     }
 
-    .last {
+    .avatar-container {
       @include row;
       gap: 2rem;
       align-self: flex-start;
+
+      .link-name {
+        display: block;
+      }
     }
 
     .banner {

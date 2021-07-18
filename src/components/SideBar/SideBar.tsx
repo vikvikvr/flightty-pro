@@ -1,17 +1,20 @@
 import React from 'react';
-import './SideBar.scss';
+
 import {
   AirplaneIcon,
   BedIcon,
   InfoIcon,
   LuggageIcon,
   UserIcon,
-} from 'assets/icons';
-import bottomBanner from 'assets/images/bottom-banner.jpg';
+  bottomBanner,
+} from 'assets';
+import './SideBar.scss';
 
-function SideBar() {
+// **** Side navigation shared between screens ****
+
+function SideBar(): JSX.Element {
   return (
-    <nav className="side-bar">
+    <nav id="side-bar">
       <ul className="nav-links">
         <li>
           <AirplaneIcon className="link-icon" />
@@ -30,14 +33,14 @@ function SideBar() {
           <p className="link-name">informazioni</p>
         </li>
       </ul>
-      <div className="line"></div>
+      <div className="horizontal-line"></div>
       <div className="bottom-part">
         <div className="banner">
           <img src={bottomBanner} alt="side banner" />
         </div>
-        <li className="last">
+        <li className="avatar-container">
           <UserIcon className="user-avatar" />
-          <p className="link-name ">ciao utente</p>
+          <p className="link-name ">Ciao, Utente!</p>
         </li>
       </div>
     </nav>

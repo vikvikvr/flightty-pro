@@ -1,15 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { PopulatedFlight } from 'types/interfaces';
+
+import { AirplaneIcon } from 'assets';
+import { PopulatedFlight } from 'types';
 import './FlightCard.scss';
-import { AirplaneIcon } from 'assets/icons';
 
 interface Props {
   flights: PopulatedFlight[];
   totalPrice: number;
 }
 
-function FlightCard({ flights, totalPrice }: Props) {
+// **** Shows details on a flight, including stop overs ****
+
+function FlightCard({ flights, totalPrice }: Props): JSX.Element {
   let stopsString = 'Diretto';
   if (flights.length > 1) {
     stopsString = `${flights.length - 1} scali`;
@@ -24,12 +27,12 @@ function FlightCard({ flights, totalPrice }: Props) {
         <p className="from-to">
           {flights[0].departureIata} → {flights[flights.length - 1].arrivalIata}
         </p>
-        <button>
+        <button className="take-flight-button">
           <AirplaneIcon className="airplane-icon" />
         </button>
         <p className="price-score">miglior prezzo</p>
         <p className="airline-name small">{flights[0].airlineName}</p>
-        <p className="stops-number">{stopsString}</p>
+        <p className="stops-count">{stopsString}</p>
       </div>
       {flights.length > 1 && (
         <>
@@ -48,7 +51,7 @@ function FlightCard({ flights, totalPrice }: Props) {
         </>
       )}
       <Link className="search-button" to="/">
-        nuova ricerca
+        indietro
       </Link>
     </div>
   );

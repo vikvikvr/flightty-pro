@@ -1,4 +1,4 @@
-@import '../../style/style';
+@import '../../../style/style';
 
 .flight-card {
   @include card;
@@ -22,7 +22,7 @@
       color: $primary;
     }
 
-    button {
+    .take-flight-button {
       @include reset-input;
       grid-column: 3;
       grid-row: 1;
@@ -42,7 +42,7 @@
       grid-row: 2;
     }
 
-    .stops-number {
+    .stops-count {
       grid-column: 3;
       grid-row: 2;
       font-weight: 700;
@@ -59,7 +59,6 @@
   .flights-list {
     display: grid;
     gap: 1rem;
-    list-style: none;
     background-color: $background;
     padding: 1rem 0.5rem;
     max-height: 8rem;
@@ -88,10 +87,8 @@
     justify-self: center;
     width: 9rem;
   }
-}
 
-@include tablet {
-  .flight-card {
+  @include tablet {
     padding: 2rem;
 
     .card-header {

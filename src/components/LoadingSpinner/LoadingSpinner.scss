@@ -1,6 +1,6 @@
 @import '../../style/style';
 
-.loading-spinner {
+#loading-spinner {
   .airplane-icon {
     @include square(4rem);
     animation: pulsate 0.5s ease-in-out infinite alternate;

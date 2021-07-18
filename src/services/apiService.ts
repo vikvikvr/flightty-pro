@@ -1,67 +1,21 @@
-import axios from 'axios';
-import { Flight, Airport, Airline } from 'types/interfaces';
+import { Flight, AppContext } from 'types';
+import * as helpers from './helpers';
 
-type DataLabel = 'flights' | 'airports' | 'airlines';
+export async function getInitialData(): Promise<AppContext> {
+  const [airports, airlines, flights] = await Promise.all([
+    helpers.getAllAirports(),
+    helpers.getAllAirlines(),
+    helpers.getAllFlights(),
+  ]);
 
-// started to get HTTP: 429 Too Many Requests
-const cacheDuration = 10_000;
-
-export async function getAllFlights(): Promise<Flight[]> {
-  return getFromCacheOrApi<Flight>('flights');
+  return { airports, airlines, flights };
 }
 
-export function getAllAirports(): Promise<Airport[]> {
-  return getFromCacheOrApi<Airport>('airports');
-}
+export function getFlightsFromTo(
+  departureIata: string,
+  arrivalIata: string
+): Promise<Flight[]> {
+  const route = `flights/from/${departureIata}/to/${arrivalIata}`;
 
-export function getAllAirlines(): Promise<Airline[]> {
-  return getFromCacheOrApi<Airline>('airlines');
-}
-
-export function getFlightsFromTo(departureIata: string, arrivalIata: string) {
-  return fetchFromApi<Flight>(
-    `flights/from/${departureIata}/to/${arrivalIata}`
-  );
-}
-
-async function getFromCacheOrApi<T>(label: DataLabel): Promise<T[]> {
-  try {
-    const data = await tryToGetFromLocalStorage<T[]>(label);
-    return data;
-  } catch (O_o) {
-    const data = await fetchFromApi<T>(`${label}/all`);
-    saveToLocalStorage<T[]>(label, data);
-    return data;
-  }
-}
-
-async function fetchFromApi<T>(route: string): Promise<T[]> {
-  const apiUrl = `${process.env.REACT_APP_API_URL}/${route}`;
-  const { data } = await axios.get<{ data: T[] }>(apiUrl, {
-    headers: {
-      Authorization: `Bearer ${process.env.REACT_APP_API_TOKEN}`,
-    },
-  });
-
-  return data.data;
-}
-
-async function tryToGetFromLocalStorage<T>(label: DataLabel) {
-  const data = localStorage.getItem(`${label}_data`);
-  const time = localStorage.getItem(`${label}_time`);
-
-  if (!data || !time) {
-    throw Error(`${label} not saved in local cache yet, need to hit API.`);
-  }
-
-  if (Date.now() - parseInt(time) > cacheDuration) {
-    throw Error(`Cache expired for ${label}, need to hit API.`);
-  }
-
-  return JSON.parse(data) as T;
-}
-
-function saveToLocalStorage<T>(label: DataLabel, data: T): void {
-  localStorage.setItem(`${label}_data`, JSON.stringify(data));
-  localStorage.setItem(`${label}_time`, String(Date.now()));
+  return helpers.fetchFromApi<Flight>(route);
 }

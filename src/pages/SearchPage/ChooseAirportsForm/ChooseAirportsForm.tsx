@@ -1,23 +1,27 @@
-import { appContext } from 'App';
 import React, { useContext, useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { SearchFlightQuery } from 'types/interfaces';
-import './SearchFlightForm.scss';
 
-function SearchFlightForm() {
+import { appContext } from 'services';
+import { AirportsQuery } from 'types';
+import './ChooseAirportsForm.scss';
+
+// **** Allows to choose departure and arrival airports ****
+
+function ChooseAirportsForm(): JSX.Element {
   const { airports } = useContext(appContext);
-  const history = useHistory<SearchFlightQuery>();
-  const [formData, setFormData] = useState<SearchFlightQuery>({
+  const history = useHistory<AirportsQuery>();
+  const [formData, setFormData] = useState<AirportsQuery>({
     arrivalIata: airports[0].codeIata,
     departureIata: airports[1].codeIata,
   });
 
-  function handleSearchSubmit(e: React.FormEvent<HTMLFormElement>) {
+  function handleSearchSubmit(e: React.FormEvent<HTMLFormElement>): void {
     e.preventDefault();
+    // use location state to share form data between screens
     history.push('/results', formData);
   }
 
-  function handleFormChange(e: FormChangeEvent) {
+  function handleFormChange(e: FormChangeEvent): void {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
@@ -25,8 +29,8 @@ function SearchFlightForm() {
   }
 
   return (
-    <div className="search-form-container">
-      <form className="search-flight-form" onSubmit={handleSearchSubmit}>
+    <div id="form-container">
+      <form onSubmit={handleSearchSubmit}>
         <h2>Dove vuoi andare?</h2>
         <p className="subtitle">Nuove e fantastiche mete ti attendono...</p>
         <div className="middle-section">
@@ -70,4 +74,4 @@ function SearchFlightForm() {
 
 type FormChangeEvent = React.ChangeEvent<HTMLSelectElement | HTMLInputElement>;
 
-export default SearchFlightForm;
+export default ChooseAirportsForm;

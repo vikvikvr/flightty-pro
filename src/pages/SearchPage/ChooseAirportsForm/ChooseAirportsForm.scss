@@ -1,10 +1,10 @@
-@import '../../style/style.scss';
+@import '../../../style/style.scss';
 
-.search-form-container {
+#form-container {
   @include card;
   padding: 2rem 1rem;
 
-  .search-flight-form {
+  form {
     @include column;
     height: 100%;
     align-items: stretch;
@@ -28,20 +28,6 @@
     .middle-section {
       display: grid;
       gap: 1rem;
-    }
-
-    .bottom-section {
-      @include row;
-      justify-content: space-between;
-    }
-
-    .col {
-      @include column;
-      align-items: flex-start;
-    }
-
-    input[type='number'] {
-      max-width: 4rem;
     }
 
     .submit-button {

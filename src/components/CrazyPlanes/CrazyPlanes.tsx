@@ -1,12 +1,15 @@
 import React from 'react';
-import './CrazyPlanes.scss';
-import { AirplaneIcon } from 'assets/icons';
 
-function CrazyPlanes() {
+import { AirplaneIcon } from 'assets';
+import './CrazyPlanes.scss';
+
+// 2 planes that go back and forth in the background
+
+function CrazyPlanes(): JSX.Element {
   return (
-    <div className="crazy-planes-container">
-      <AirplaneIcon className="plane first" />
-      <AirplaneIcon className="plane second" />
+    <div id="crazy-planes">
+      <AirplaneIcon className="plane top" />
+      <AirplaneIcon className="plane bottom" />
     </div>
   );
 }
