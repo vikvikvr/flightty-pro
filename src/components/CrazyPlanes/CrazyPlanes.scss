@@ -15,25 +15,25 @@
       &.top {
         @include square(4rem);
         top: 5rem;
-        animation: leftToRight 6s linear infinite;
+        animation: leftToRight 8s linear infinite;
       }
 
       &.bottom {
         @include square(3rem);
         bottom: 5rem;
-        animation: rightToLeft 8s linear infinite reverse;
-        animation-delay: -2s;
+        animation: leftToRight 8s linear infinite;
+        animation-delay: -4s;
       }
     }
 
     @include desktop {
       &.top {
-        animation: leftToRight 11s linear infinite;
+        animation: leftToRight 12s linear infinite;
       }
 
       &.bottom {
-        animation: rightToLeft 13s linear infinite;
-        animation-delay: -4s;
+        animation: leftToRight 12s linear infinite;
+        animation-delay: -6s;
       }
     }
   }
@@ -49,20 +49,5 @@
   }
   100% {
     left: 100%;
-  }
-}
-
-@keyframes rightToLeft {
-  0% {
-    left: 100%;
-    transform: rotate(180deg) scaleY(-1);
-  }
-  50% {
-    margin-bottom: 4rem;
-    transform: rotate(140deg) scaleY(-1);
-  }
-  100% {
-    left: 0;
-    transform: rotate(120deg) scaleY(-1);
   }
 }
