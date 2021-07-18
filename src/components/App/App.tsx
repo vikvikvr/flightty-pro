@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 import { getInitialData, appContext, defaultAppContext } from 'services';
-import { PageRouter } from 'components';
+import { CrazyPlanes, PageRouter } from 'components';
 import { sideBanner } from 'assets';
 import { AppContext } from 'types';
 import './App.scss';
@@ -23,6 +23,7 @@ function App(): JSX.Element {
       <appContext.Provider value={appState}>
         <PageRouter />
         <img src={sideBanner} className="right-banner" alt="right banner" />
+        <CrazyPlanes />
       </appContext.Provider>
     </div>
   );

@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Redirect, useLocation } from 'react-router-dom';
 
-import { CrazyPlanes, LoadingSpinner } from 'components';
+import { LoadingSpinner } from 'components';
 import {
   populateFlights,
   sumFlightsCost,
@@ -51,7 +51,6 @@ function ResultsPage(): JSX.Element {
         flights={populatedFlights}
         totalPrice={sumFlightsCost(flights)}
       />
-      <CrazyPlanes />
     </div>
   );
 }

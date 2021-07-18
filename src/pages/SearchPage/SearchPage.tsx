@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 
-import { LoadingSpinner, CrazyPlanes } from 'components';
+import { LoadingSpinner } from 'components';
 import { bottomBanner } from 'assets';
 import SearchFlightForm from './ChooseAirportsForm';
 import { appContext } from 'services';
@@ -16,7 +16,6 @@ function SearchPage(): JSX.Element {
       {airports.length ? (
         <>
           <SearchFlightForm />
-          <CrazyPlanes />
           <img
             className="bottom-banner"
             src={bottomBanner}
