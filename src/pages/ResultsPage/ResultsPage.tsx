@@ -8,13 +8,15 @@ import {
   getFlightsFromTo,
   appContext,
 } from 'services';
-import { Flight, SearchFlightQuery } from 'types';
+import { Flight, AirportsQuery } from 'types';
 import FlightCard from './FlightCard';
 import './ResultsPage.scss';
 
+// **** Shows cheapest way to connect between 2 airports ****
+
 function ResultsPage(): JSX.Element {
   const { airlines, airports } = useContext(appContext);
-  const { state } = useLocation<SearchFlightQuery>();
+  const { state } = useLocation<AirportsQuery>();
   const [flights, setFlights] = useState<Flight[]>([]);
 
   useEffect(makeRequestUsingFormData, [state]);

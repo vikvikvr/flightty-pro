@@ -10,6 +10,8 @@ interface Props {
   totalPrice: number;
 }
 
+// **** Shows details on a flight, including stop overs ****
+
 function FlightCard({ flights, totalPrice }: Props): JSX.Element {
   let stopsString = 'Diretto';
   if (flights.length > 1) {

@@ -2,19 +2,22 @@ import React, { useContext, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import { appContext } from 'services';
-import { SearchFlightQuery } from 'types';
-import './SearchFlightForm.scss';
+import { AirportsQuery } from 'types';
+import './ChooseAirportsForm.scss';
 
-function SearchFlightForm(): JSX.Element {
+// **** Allows to choose departure and arrival airports ****
+
+function ChooseAirportsForm(): JSX.Element {
   const { airports } = useContext(appContext);
-  const history = useHistory<SearchFlightQuery>();
-  const [formData, setFormData] = useState<SearchFlightQuery>({
+  const history = useHistory<AirportsQuery>();
+  const [formData, setFormData] = useState<AirportsQuery>({
     arrivalIata: airports[0].codeIata,
     departureIata: airports[1].codeIata,
   });
 
   function handleSearchSubmit(e: React.FormEvent<HTMLFormElement>): void {
     e.preventDefault();
+    // use location state to share form data between screens
     history.push('/results', formData);
   }
 
@@ -71,4 +74,4 @@ function SearchFlightForm(): JSX.Element {
 
 type FormChangeEvent = React.ChangeEvent<HTMLSelectElement | HTMLInputElement>;
 
-export default SearchFlightForm;
+export default ChooseAirportsForm;

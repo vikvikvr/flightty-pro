@@ -3,7 +3,7 @@ import React from 'react';
 import { AirplaneIcon } from 'assets';
 import './LoadingSpinner.scss';
 
-// airplane icon that pulsates
+// **** Pulsating airplane icon ****
 
 function LoadingSpinner(): JSX.Element {
   return (

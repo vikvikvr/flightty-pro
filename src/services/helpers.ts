@@ -3,11 +3,15 @@ import { Airline, Airport, Flight } from 'types';
 
 type DataLabel = 'flights' | 'airports' | 'airlines';
 
+// **** Settings *****
+
 let cacheDuration = 60_000;
 
 if (process.env.REACT_APP_CACHE_DURATION) {
   cacheDuration = parseInt(process.env.REACT_APP_CACHE_DURATION);
 }
+
+// **** High level functions ****
 
 export async function getAllFlights(): Promise<Flight[]> {
   return getFromCacheOrApi<Flight>('flights');
@@ -20,6 +24,8 @@ export function getAllAirports(): Promise<Airport[]> {
 export function getAllAirlines(): Promise<Airline[]> {
   return getFromCacheOrApi<Airline>('airlines');
 }
+
+// **** Low level functions ****
 
 export async function getFromCacheOrApi<T>(label: DataLabel): Promise<T[]> {
   try {
@@ -42,6 +48,8 @@ export async function fetchFromApi<T>(route: string): Promise<T[]> {
 
   return data.data;
 }
+
+// **** Local storage related ****
 
 export async function tryToGetFromLocalStorage<T>(
   label: DataLabel

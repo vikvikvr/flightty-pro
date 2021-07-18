@@ -3,7 +3,7 @@
 @import './shapes.scss';
 @import './reset.scss';
 
-// app-specific mixins
+// **** App-specific mixins ****
 
 @mixin app-button {
   @include center;

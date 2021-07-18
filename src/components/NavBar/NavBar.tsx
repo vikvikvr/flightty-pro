@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import { appLogo } from 'assets';
 import './NavBar.scss';
 
+// **** Top navigation shared between screens ****
+
 function NavBar(): JSX.Element {
   return (
     <nav id="app-navbar">

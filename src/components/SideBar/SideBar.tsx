@@ -10,6 +10,8 @@ import {
 } from 'assets';
 import './SideBar.scss';
 
+// **** Side navigation shared between screens ****
+
 function SideBar(): JSX.Element {
   return (
     <nav id="side-bar">

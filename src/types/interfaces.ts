@@ -28,7 +28,7 @@ export interface PopulatedFlight {
   arrivalIata: string;
 }
 
-export interface SearchFlightQuery {
+export interface AirportsQuery {
   departureIata: string;
   arrivalIata: string;
 }
