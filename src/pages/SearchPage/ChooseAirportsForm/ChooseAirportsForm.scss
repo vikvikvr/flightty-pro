@@ -30,9 +30,12 @@
       gap: 1rem;
     }
 
-    .submit-button {
-      @include app-button;
+    .submit-button-container {
       align-self: center;
+
+      .submit-button {
+        @include app-button;
+      }
     }
   }
 }
