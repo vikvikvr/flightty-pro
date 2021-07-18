@@ -9,10 +9,13 @@ import {
   bottomBanner,
 } from 'assets';
 import './SideBar.scss';
+import useSideBarAnimations from './useSideBarAnimations';
 
 // **** Side navigation shared between screens ****
 
 function SideBar(): JSX.Element {
+  useSideBarAnimations();
+
   return (
     <nav id="side-bar">
       <ul className="nav-links">
