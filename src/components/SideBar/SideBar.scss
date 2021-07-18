@@ -9,9 +9,14 @@
     gap: 2.5rem;
     margin-top: 1rem;
 
+    li {
+      cursor: pointer;
+    }
+
     .link-icon {
       @include square(1.5rem);
       fill: $foreground;
+      transition: all 0.3s ease-in-out;
     }
 
     .link-name {
@@ -53,13 +58,35 @@
   }
 
   @include desktop {
-    .nav-links {
-      align-items: flex-start;
+    align-items: flex-start;
 
-      .link-name {
-        display: block;
-        font-weight: 600;
-        text-transform: capitalize;
+    .nav-links {
+      width: 100%;
+      align-items: flex-start;
+      gap: 1rem;
+
+      li {
+        @include row;
+        padding: 1rem 2rem;
+        gap: 2rem;
+        align-self: flex-start;
+        width: 100%;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+          background-color: $darkHover;
+          padding-left: 2.5rem;
+
+          .link-icon {
+            fill: $primary;
+          }
+        }
+
+        .link-name {
+          display: block;
+          font-weight: 600;
+          text-transform: capitalize;
+        }
       }
     }
 
@@ -69,17 +96,6 @@
       border: none;
       border-bottom: 1px solid $background;
       margin: 0 2rem;
-    }
-
-    .nav-links {
-      padding-left: 2rem;
-      padding-right: 2rem;
-
-      li {
-        @include row;
-        gap: 2rem;
-        align-self: flex-start;
-      }
     }
 
     .bottom-part {
