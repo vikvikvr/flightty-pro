@@ -7,6 +7,7 @@
 
   .from-to {
     font-weight: 700;
+    transition: all 0.3s ease-out;
   }
 
   .airline-name {
@@ -29,6 +30,13 @@
 
       .airplane-icon {
         fill: $primary;
+        cursor: pointer;
+        filter: drop-shadow($shadow);
+        transition: all 0.15s ease-out;
+
+        &:hover {
+          transform: rotate(30deg);
+        }
       }
     }
 
@@ -58,20 +66,21 @@
 
   .flights-list {
     display: grid;
-    gap: 1rem;
     background-color: $background;
-    padding: 1rem 0.5rem;
     max-height: 8rem;
     overflow-y: scroll;
 
     .flight-details {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
+      padding: 0.5rem;
+      cursor: pointer;
 
       .price-small {
         font-weight: 700;
         color: $lessImportant;
         justify-self: end;
+        transition: all 0.3s ease-out;
       }
 
       .airline-name {
@@ -79,13 +88,28 @@
         overflow: hidden;
         text-overflow: ellipsis;
       }
+
+      &:hover {
+        background-color: $backgroundHover;
+
+        .price-small {
+          color: $primary;
+        }
+
+        .from-to {
+          margin-left: 0.5rem;
+        }
+      }
     }
   }
 
-  .search-button {
-    @include app-button;
+  .search-button-container {
     justify-self: center;
-    width: 9rem;
+
+    .search-button {
+      @include app-button;
+      width: 9rem;
+    }
   }
 
   @include tablet {

@@ -11,6 +11,7 @@
       position: absolute;
       fill: $dark;
       filter: drop-shadow($shadow);
+      opacity: 0.5;
 
       &.top {
         @include square(4rem);

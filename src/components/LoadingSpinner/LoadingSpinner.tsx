@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { AirplaneIcon } from 'assets';
+import { AirplaneIcon, CloudIcon } from 'assets';
 import './LoadingSpinner.scss';
 
 // **** Pulsating airplane icon ****
@@ -8,7 +8,9 @@ import './LoadingSpinner.scss';
 function LoadingSpinner(): JSX.Element {
   return (
     <div id="loading-spinner">
+      <CloudIcon className="cloud fast" />
       <AirplaneIcon className="airplane-icon" />
+      <CloudIcon className="cloud slow" />
     </div>
   );
 }
