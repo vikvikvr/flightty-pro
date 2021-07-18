@@ -7,6 +7,7 @@
 
   .from-to {
     font-weight: 700;
+    transition: all 0.3s ease-in-out;
   }
 
   .airline-name {
@@ -65,26 +66,39 @@
 
   .flights-list {
     display: grid;
-    gap: 1rem;
     background-color: $background;
-    padding: 1rem 0.5rem;
     max-height: 8rem;
     overflow-y: scroll;
 
     .flight-details {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
+      padding: 0.5rem;
+      cursor: pointer;
 
       .price-small {
         font-weight: 700;
         color: $lessImportant;
         justify-self: end;
+        transition: all 0.3s ease-in-out;
       }
 
       .airline-name {
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+      }
+
+      &:hover {
+        background-color: $backgroundHover;
+
+        .price-small {
+          color: $primary;
+        }
+
+        .from-to {
+          margin-left: 0.5rem;
+        }
       }
     }
   }
