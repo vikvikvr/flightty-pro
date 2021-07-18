@@ -33,8 +33,6 @@ a {
 
   .right-banner {
     display: none;
-    grid-column: 3;
-    grid-row: 2 / -1;
   }
 
   @include tablet {
@@ -43,9 +41,16 @@ a {
 
     .right-banner {
       display: block;
+      grid-column: 3;
+      grid-row: 2 / -1;
       min-height: 50%;
       height: 100%;
       object-position: 0% 100%;
+
+      &:hover {
+        filter: brightness(0.5);
+        cursor: not-allowed;
+      }
     }
   }
 
