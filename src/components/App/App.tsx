@@ -5,10 +5,12 @@ import { PageRouter } from 'components';
 import { sideBanner } from 'assets';
 import { AppContext } from 'types';
 import './App.scss';
+import useAppAnimations from './useAppAnimations';
 
 function App(): JSX.Element {
   const [appState, setAppState] = useState<AppContext>(defaultAppContext);
   useEffect(makeInitialFetch, []);
+  useAppAnimations();
 
   function makeInitialFetch(): void {
     getInitialData()
