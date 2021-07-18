@@ -7,7 +7,7 @@
 
   .from-to {
     font-weight: 700;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-out;
   }
 
   .airline-name {
@@ -32,7 +32,7 @@
         fill: $primary;
         cursor: pointer;
         filter: drop-shadow($shadow);
-        transition: all 0.15s ease-in-out;
+        transition: all 0.15s ease-out;
 
         &:hover {
           transform: rotate(30deg);
@@ -80,7 +80,7 @@
         font-weight: 700;
         color: $lessImportant;
         justify-self: end;
-        transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-out;
       }
 
       .airline-name {
