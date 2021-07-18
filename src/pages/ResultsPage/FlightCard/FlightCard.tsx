@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 import { AirplaneIcon } from 'assets';
 import { PopulatedFlight } from 'types';
+import useFlightCardAnimations from './useFlightCardAnimations';
 import './FlightCard.scss';
 
 interface Props {
@@ -13,6 +14,8 @@ interface Props {
 // **** Shows details on a flight, including stop overs ****
 
 function FlightCard({ flights, totalPrice }: Props): JSX.Element {
+  useFlightCardAnimations();
+
   let stopsString = 'Diretto';
   if (flights.length > 1) {
     stopsString = `${flights.length - 1} scali`;
@@ -20,8 +23,10 @@ function FlightCard({ flights, totalPrice }: Props): JSX.Element {
 
   return (
     <div className="flight-card">
-      <h1>Risultati ricerca</h1>
-      <p>Ce l’hai fatta, sei ad un passo dalla partenza!</p>
+      <h1 className="card-title">Risultati ricerca</h1>
+      <p className="card-subtitle">
+        Ce l’hai fatta, sei ad un passo dalla partenza!
+      </p>
       <div className="card-header">
         <h3 className="total-price">€ {Math.round(totalPrice)}</h3>
         <p className="from-to">
@@ -36,7 +41,7 @@ function FlightCard({ flights, totalPrice }: Props): JSX.Element {
       </div>
       {flights.length > 1 && (
         <>
-          <hr />
+          <hr className="horizontal-line" />
           <ol className="flights-list">
             {flights.map((flight) => (
               <li key={flight.id} className="flight-details">
@@ -50,9 +55,11 @@ function FlightCard({ flights, totalPrice }: Props): JSX.Element {
           </ol>
         </>
       )}
-      <Link className="search-button" to="/">
-        indietro
-      </Link>
+      <div className="search-button-container">
+        <Link className="search-button" to="/">
+          indietro
+        </Link>
+      </div>
     </div>
   );
 }

@@ -103,10 +103,13 @@
     }
   }
 
-  .search-button {
-    @include app-button;
+  .search-button-container {
     justify-self: center;
-    width: 9rem;
+
+    .search-button {
+      @include app-button;
+      width: 9rem;
+    }
   }
 
   @include tablet {
