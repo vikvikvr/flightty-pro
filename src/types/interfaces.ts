@@ -1,3 +1,5 @@
+// **** Entities ****
+
 export interface Flight {
   id: number;
   airlineId: number;
@@ -20,6 +22,14 @@ export interface Airline {
   logoFilename: string;
 }
 
+// **** Related to components ****
+
+export interface AppContext {
+  flights: Flight[];
+  airports: Airport[];
+  airlines: Airline[];
+}
+
 export interface PopulatedFlight {
   id: number;
   price: number;
@@ -31,12 +41,6 @@ export interface PopulatedFlight {
 export interface AirportsQuery {
   departureIata: string;
   arrivalIata: string;
-}
-
-export interface AppContext {
-  flights: Flight[];
-  airports: Airport[];
-  airlines: Airline[];
 }
 
 export interface RouteDescription {
