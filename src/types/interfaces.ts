@@ -38,3 +38,8 @@ export interface AppContext {
   airports: Airport[];
   airlines: Airline[];
 }
+
+export interface RouteDescription {
+  path: string;
+  component: JSX.Element;
+}

@@ -17,7 +17,11 @@ function SearchPage(): JSX.Element {
         <>
           <SearchFlightForm />
           <CrazyPlanes />
-          <img className="banner" src={bottomBanner} alt="banner" />
+          <img
+            className="bottom-banner"
+            src={bottomBanner}
+            alt="bottom banner"
+          />
         </>
       ) : (
         <LoadingSpinner />
